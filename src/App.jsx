@@ -1,10 +1,14 @@
-import Loadingpage from './compos/utiles/Loadingpage'
+import Navber from "./compos/common/Navber"
 
+
+ 
 const App = () => {
   return (
     <>
-<Loadingpage/>
-    <div>App</div>
+
+    <Navber/>
+
+      <div>App</div>
     </>
   )
 }

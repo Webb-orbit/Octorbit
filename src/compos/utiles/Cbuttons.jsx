@@ -1,11 +1,21 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+export const Cbuttons = ({ 
+  btype, 
+  bclass = "", 
+  tclass = "", 
+  iclass = "", 
+  text ="button", 
+  icon, 
+  ...props 
+}) => {
 
-export const Cbuttons = ({btype="0", classes="", text="button"}) => {
-    const buttons = [
-        "text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl  font-medium rounded-sm text-sm px-5 py-2.5 text-center me-2 mb-2",
-        "text-white bg-gradient-to-br from-red-600 to-yellow-500 hover:bg-gradient-to-bl  font-medium rounded-sm text-sm px-5 py-2.5 text-center me-2 mb-2"
-    ]
-  return (
-    <button className={`${buttons[btype]} ${classes}`}>{text}</button>
-  )
+  const buttons = [
+    "bg-neutral-50 text-black px-3 py-1 rounded-md flex justify-center items-center gap-1 hover:bg-neutral-200 duration-75 hover:-translate-y-[0.10rem] active:scale-[1.01]",
+    "bg-neutral-900 text-white px-3 py-1 rounded-md flex justify-center items-center gap-1 hover:bg-neutral-950 duration-75 hover:-translate-y-[0.10rem] active:scale-[1.01]"
+  ]
+  return <button {...props} className={` ${buttons[btype]==undefined?buttons[0]:buttons[btype]} ${bclass}`}>
+        {icon && <span className={`material-symbols-outlined text-[1rem] font-medium ${iclass}`}>{icon}</span>}
+        <p className={` font-medium capitalize  ${tclass}`} >{text}</p>
+      </button>;
+  
 }
