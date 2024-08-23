@@ -6,3 +6,22 @@ body{
     background-color: black;
     color: white;
 }
+
+.scrollbar::-webkit-scrollbar{
+    width: 0.4rem;
+}
+.scrollbar::-webkit-scrollbar-thumb{
+    background-color: #555;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.no-visible-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+   
+  .no-visible-scrollbar::-webkit-scrollbar {
+    display: none;
+  }

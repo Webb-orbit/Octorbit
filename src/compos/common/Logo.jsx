@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Logo = () => {
     return (
-        <Link href={"/"}>
+        <Link to={"/"}>
             <motion.img
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
