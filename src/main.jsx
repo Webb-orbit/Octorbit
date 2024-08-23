@@ -13,6 +13,7 @@ import Dashoverview from './compos/dashbord/Dashoverview.jsx'
 import About from './compos/common/About.jsx'
 import Addblog from './compos/dashbord/Addblog.jsx'
 import Editblog from './compos/dashbord/Editblog.jsx'
+import Login from './compos/auth/Login.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='/' element={<App />}>
 
             <Route path='/' index element={<Home />} />
+            <Route path='/subhro' index element={<Login />} />
 
             <Route path='/mkr' element={<Makarov />} >
               <Route path='/mkr/blogs' element={<Blogslist />} />
@@ -34,7 +36,7 @@ createRoot(document.getElementById('root')).render(
               <Route path='/dashboard/create' element={<Addblog />} />
               <Route path='/dashboard/edit/:blogid' element={<Editblog />} />
             </Route>
-            
+
           </Route>
 
         </Routes>
