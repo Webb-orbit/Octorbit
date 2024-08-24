@@ -1,15 +1,20 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Dropmenu, Menubutton, Menulink } from '../utiles/Dropmenu'
+import Toggle from '../utiles/Toggle'
 
 const Blogcard = ({data}) => {
-  const naviget = useNavigate()
+  const [actived, setactived] = useState(false)
 
   return (
     <div className='w-[23rem] h-[10rem] bg-neutral-950 outline outline-1 outline-neutral-600 p-2 rounded-md flex flex-col justify-between max-sm:h-[8rem] group'>
         <div className='flex items-center justify-between'>
             <h3 className='text-neutral-200 text-[0.9rem] font-medium line-clamp-1'>{data.title}</h3>
-            <button onClick={()=> naviget(`/dashboard/edit/${data.$id}`)} className="material-symbols-outlined text-neutral-200 hidden group-hover:inline-block duration-100 text-[1.2rem]">draw</button>
+            <Dropmenu active={actived} setactive={setactived} icon={"more_horiz"} >
+              <Menulink to={`/dashboard/edit/${data.$id}`}>edit</Menulink>
+              <Menulink> share</Menulink>
+              <Menubutton>delete</Menubutton>
+            </Dropmenu>
         </div>
         <p className=' line-clamp-2 text-[0.8rem] font-medium text-neutral-400'>{data.description}</p>
         <div className='flex items-center justify-between text-neutral-500 text-[0.7rem] uppercase font-semibold'>
