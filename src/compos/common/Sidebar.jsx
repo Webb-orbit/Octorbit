@@ -34,7 +34,7 @@ export const Sidebar = () => {
   return (
     <div className=' p-2  py-20 bg-[#121212] flex flex-col gap-5 w-[20%] h-screen fixed  overflow-y-scroll scrollbar select-none'>
       {blogdata.map((e) => (
-        <Link key={e.$id} to={`/blog/${e?.$id}`} className="pl-10">
+        <Link key={e.$id} to={`/mkr/blog/${e?.$id}`} className="pl-10">
           <div className=' group cursor-pointer overflow-hidden'>
             <div className="flex items-center justify-start">
               <span className="material-symbols-outlined text-[0.9rem] text-zinc-400 group-hover:text-zinc-100 duration-100">line_start</span>

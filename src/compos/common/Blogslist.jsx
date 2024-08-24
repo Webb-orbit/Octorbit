@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useEffect } from 'react'
 import Blogbase from '../../appwrite/blogbase'
 import { Link } from 'react-router-dom'

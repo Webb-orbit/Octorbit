@@ -9,22 +9,20 @@ import Admin from "../../appwrite/auth"
 import Blogbase from "../../appwrite/blogbase"
 import { useNavigate } from "react-router-dom"
 
-const Addblog = ({prevals=false}) => {
+const Addblog = ({ prevals = false }) => {
     const [editorvalue, seteditorvalue] = useState("")
     const [blogactived, setblogactived] = useState(true)
     const [predate, setpredate] = useState("")
 
     const { register, watch, handleSubmit, setError, formState: { errors, isSubmitting } } = useForm({
-        defaultValues:{
+        defaultValues: {
             title: prevals?.title || "",
             description: prevals?.description || ""
         },
     })
+
     const watchAllFields = watch()
     const naviget = useNavigate()
-
-
-
 
     const publishblog = async (data) => {
         try {
@@ -32,32 +30,32 @@ const Addblog = ({prevals=false}) => {
             const admin = await Admin.getcurrentaccount()
             if (admin) {
                 if (!prevals) {
-                    const upload = await Blogbase.createblog(data.title, data.description, editorvalue, admin.$id,date, blogactived)
+                    const upload = await Blogbase.createblog(data.title, data.description, editorvalue, admin.$id, date, blogactived)
                     if (upload) {
-                        console.log("uploaded->",upload);
+                        console.log("uploaded->", upload);
                         naviget("/dashboard/overview")
                     }
-                }else{
-                    const update = await Blogbase.updateblog(prevals.$id, {title: data.title, description: data.description, content: editorvalue, creator: admin.$id, active: blogactived } )
+                } else {
+                    const update = await Blogbase.updateblog(prevals.$id, { title: data.title, description: data.description, content: editorvalue, creator: admin.$id, active: blogactived })
                     if (update) {
-                        console.log("updated->",update);
+                        console.log("updated->", update);
                         naviget("/dashboard/overview")
                     }
                 }
             }
         } catch (error) {
-            setError("root", { message: error.response?.message || "something went wronge"})
+            setError("root", { message: error.response?.message || "something went wronge" })
             console.log(error.response)
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         if (prevals !== false) {
             seteditorvalue(prevals?.content)
             setblogactived(prevals?.active)
             setpredate(prevals?.date)
         }
-    },[])
+    }, [])
 
     return (
         <div className="w-[60%] mx-auto py-10 flex flex-col gap-10 max-sm:w-[95%] ">
@@ -88,11 +86,9 @@ const Addblog = ({prevals=false}) => {
                     <button className=" capitalize font-medium text-[0.9rem]" type="button" onClick={() => setblogactived(pre => !pre)}>show live</button>
                 </div>
 
-            <EditorBlock content={editorvalue} setcontent={seteditorvalue} />
-            {errors.root && <div>
-                <p className="uppercase text-red-500 animate-pulse font-medium select-none text-[0.7rem]">{errors.root.message}</p>
-            </div>}
-            <Cbuttons type="submit" text={`${prevals? "update": "share"}`} bclass="w-fit px-5" icon={"thread_unread"} tclass="text-[0.9rem]" />
+                <EditorBlock content={editorvalue} setcontent={seteditorvalue} />
+                {errors.root && <div><p className="uppercase text-red-500 animate-pulse font-medium select-none text-[0.7rem]">{errors.root.message}</p></div>}
+                <Cbuttons type="submit" text={`${prevals ? "update" : "share"}`} bclass="w-fit px-5" icon={"thread_unread"} tclass="text-[0.9rem]" />
             </form>
         </div>
     )

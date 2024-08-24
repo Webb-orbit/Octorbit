@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
 import { Dropmenu, Menubutton, Menulink } from '../utiles/Dropmenu'
-import Toggle from '../utiles/Toggle'
 
 const Blogcard = ({data}) => {
   const [actived, setactived] = useState(false)

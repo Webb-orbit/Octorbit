@@ -19,10 +19,12 @@ const EditorBlock = ({ content, setcontent }) => {
             <div className=' flex flex-col gap-5'>
                 <div className=' flex gap-5' >
                     <button
+                    type='button'
                         className={`bg-neutral-50 text-[0.9rem] text-black px-3 py-1 rounded-full flex justify-center items-center gap-1 font-medium capitalize duration-75 hover:-translate-y-[0.10rem] active:scale-[1.01] ${!isactive && " bg-neutral-700 text-neutral-50"}`}
                         onClick={() => setisactive(true)} ><span className={`material-symbols-outlined text-[1rem] font-medium`}>edit</span>editor</button>
 
                     <button
+                    type='button'
                         className={`bg-neutral-50 text-[0.9rem] text-black px-3 py-1 rounded-full flex justify-center items-center gap-1 font-medium capitalize duration-75 hover:-translate-y-[0.10rem] active:scale-[1.01] ${isactive && " bg-neutral-700 text-neutral-50"}`}
                         onClick={() => setisactive(false)} ><span className={`material-symbols-outlined text-[1rem] font-medium`}>power</span>preview</button>
                 </div>

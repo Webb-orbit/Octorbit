@@ -40,7 +40,7 @@ export const Blog = () => {
                 </div>
             </div>
             <TracingBeam>
-                <div className=''> {parse(plaintohtml(blogdata.content))}</div>
+                <div className='ml-20 max-sm:ml-1'> {parse(plaintohtml(blogdata.content))}</div>
             </TracingBeam>
         </div>
     ) : null

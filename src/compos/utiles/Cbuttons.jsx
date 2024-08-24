@@ -17,5 +17,4 @@ export const Cbuttons = ({
         {icon && <span className={`material-symbols-outlined text-[1rem] font-medium max-sm:text-[0.6rem] ${iclass}`}>{icon}</span>}
         <p className={` font-medium capitalize max-sm:text-[0.6rem]  ${tclass}`} >{text}</p>
       </button>;
-  
 }
