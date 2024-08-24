@@ -25,8 +25,8 @@ class blogclass{
         return await this.blogs.deleteDocument(Appwriteconf.appwritebase, Appwriteconf.blogcollid, docid)
     }
 
-    async updateblog(docid, {title, description, content, creator, views, likes, active}){
-        return await this.blogs.updateDocument(Appwriteconf.appwritebase, Appwriteconf.blogcollid, docid, {title, description, content, creator, views, likes, active})
+    async updateblog(docid, {title, description, content, creator, active}){
+        return await this.blogs.updateDocument(Appwriteconf.appwritebase, Appwriteconf.blogcollid, docid, {title, description, content, creator, active})
     }
 
     async firstlistblogs(){

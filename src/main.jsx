@@ -13,7 +13,6 @@ import Dashoverview from './compos/dashbord/Dashoverview.jsx'
 import About from './compos/common/About.jsx'
 import Addblog from './compos/dashbord/Addblog.jsx'
 import Editblog from './compos/dashbord/Editblog.jsx'
-import Login from './compos/auth/Login.jsx'
 import { Blog } from './compos/common/Blog.jsx'
 
 createRoot(document.getElementById('root')).render(
@@ -25,7 +24,6 @@ createRoot(document.getElementById('root')).render(
           <Route path='/' element={<App />}>
 
             <Route path='/' index element={<Home />} />
-            <Route path='/subhro' index element={<Login />} />
 
             <Route path='/mkr' element={<Makarov />} >
               <Route path='/mkr/blogs' element={<Blogslist />} />

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Sidebar } from '../compos/common/Sidebar'
 import Navber from '../compos/common/Navber'
 import Header from '../compos/common/Header'
