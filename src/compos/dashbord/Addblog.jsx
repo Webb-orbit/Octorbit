@@ -75,7 +75,7 @@ const Addblog = ({ prevals = false }) => {
                     <p className=" uppercase text-neutral-300 font-medium select-none ">description:</p>
                     {errors.description && <p className=" uppercase text-red-500 animate-pulse font-medium select-none text-[0.7rem]">{errors.description?.message}</p>}
                     <Textareacompo
-                        {...register("description", { required: "description is required" })}
+                        {...register("description")}
                         lmax={250}
                         classes="h-[5.5rem] text-[1rem]"
                         plain={"description"} />

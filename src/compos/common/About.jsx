@@ -1,5 +1,7 @@
 import plaintohtml from "markdown-to-htm"
 import parse from "html-react-parser"
+import { Link } from "react-router-dom"
+import xlogo from "../../files/xlogow.png"
 
 const About = () => {
 
@@ -16,7 +18,7 @@ That discovery led me to his blog, where I ended up reading **around 10 blogs** 
 My head was practically exploding with a **headache** from all the reading,  but it sparked a thought: 
 
 what's happend I started writing blogs? 
-And why not create a self-made blog website to known them!
+And why not create a self-made blog website to known thet!
 
 ---
 i write not because i like it.
@@ -26,6 +28,8 @@ i write not because i impressed someone.
 i write because i express yourself.
 i write because i express emotions.
 i write because i will to become 2.0.
+---
+
 
 `
     return (
@@ -33,8 +37,11 @@ i write because i will to become 2.0.
             <div>
                 <h1 className='poppins selection:text-black selection:bg-white text-[2rem] capitalize font-bold text-transparent bg-clip-text bg-gradient-to-br  from-neutral-100 to-neutral-500 '> about me? </h1>
                 <p className=' poppins selection:text-black selection:bg-white text-neutral-500 uppercase font-medium text-[0.9rem] opacity-90'> how am i as makarov ! </p >
-                <div className="inter text-[1.1rem] text-neutral-200">
+                <div className="inter text-[1.1rem] text-neutral-200 max-sm:text-[0.9rem]">
                     {parse(plaintohtml(abouts))}
+                </div>
+                <div>
+                    <div className="flex items-center gap-1 text-[0.9rem] text-neutral-400">you connect on <Link to="https://x.com/webbenemies"><img className="w-[1rem]" src={xlogo} /></Link></div>
                 </div>
             </div>
         </>

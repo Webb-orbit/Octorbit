@@ -1,4 +1,3 @@
-import React from 'react'
 import { Blog } from '../compos/common/Blog'
 import Blogslist from '../compos/common/Blogslist'
 

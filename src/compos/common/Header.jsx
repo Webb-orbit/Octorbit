@@ -10,7 +10,7 @@ const Header = () => {
                 <h3 className=' text-center selection:text-black selection:bg-white text-[2.5rem] capitalize font-bold max-sm:text-[1.5rem]'>nothing adsolute | nothing ramdom</h3>
             </div>
             <ShootingStars  />
-            <StarsBackground starDensity={0.0005} />
+            <StarsBackground starDensity={0.001} />
         </div>
     )
 }
