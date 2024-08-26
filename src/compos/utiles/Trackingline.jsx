@@ -100,8 +100,8 @@ export const TracingBeam = ({ children, className }) => {
               gradientUnits="userSpaceOnUse"
               x1="0"
               x2="0"
-              // set y1 for gradient
-              // set y2 for gradient
+              y1={y1} // set y1 for gradient
+              y2={y2}
             >
               <stop stopColor="#18CCFC" stopOpacity="0"></stop>
               <stop stopColor="#18CCFC"></stop>

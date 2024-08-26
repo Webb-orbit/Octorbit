@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { Cbuttons } from '../utiles/Cbuttons'
 
 
-const Blogslist = () => {
+const Blogslist = ({header=true}) => {
     const [blogdata, setblogdata] = useState([])
     const [datalogn, setdatalogn] = useState(null)
 
@@ -36,7 +36,7 @@ const Blogslist = () => {
 
     return (
         <>
-            <div>
+            <div className={`w-full ${header?"block":"hidden"}`}>
                 <h1 className='selection:text-black selection:bg-white text-[2rem] capitalize font-bold text-transparent bg-clip-text bg-gradient-to-br  from-neutral-100 to-neutral-500 '>all blogs</h1>
                 <p className=' selection:text-black selection:bg-white text-neutral-500 uppercase font-medium text-[0.9rem] opacity-90'>..............</p >
             </div>

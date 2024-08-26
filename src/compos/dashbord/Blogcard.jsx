@@ -1,9 +1,22 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
 import { Dropmenu, Menubutton, Menulink } from '../utiles/Dropmenu'
+import Blogbase from '../../appwrite/blogbase'
 
 const Blogcard = ({data}) => {
   const [actived, setactived] = useState(false)
+
+  const deleteblog = async()=>{
+    try {
+      const db = await Blogbase.deleteblog(data.$id) 
+      if(db){
+        console.log("one blog deleted now ", data.$id);
+      }
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
 
   return (
     <div className='w-[23rem] h-[10rem] bg-neutral-950 outline outline-1 outline-neutral-600 p-2 rounded-md flex flex-col justify-between max-sm:h-[8rem] group'>
@@ -12,7 +25,7 @@ const Blogcard = ({data}) => {
             <Dropmenu active={actived} setactive={setactived} icon={"more_horiz"} >
               <Menulink to={`/dashboard/edit/${data.$id}`}>edit</Menulink>
               <Menulink> share</Menulink>
-              <Menubutton>delete</Menubutton>
+              <Menubutton onClick={deleteblog}>delete</Menubutton>
             </Dropmenu>
         </div>
         <p className=' line-clamp-2 text-[0.8rem] font-medium text-neutral-400'>{data.description}</p>

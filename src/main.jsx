@@ -14,6 +14,7 @@ import About from './compos/common/About.jsx'
 import Addblog from './compos/dashbord/Addblog.jsx'
 import Editblog from './compos/dashbord/Editblog.jsx'
 import { Blog } from './compos/common/Blog.jsx'
+import Blogpage from './pages/Blogpage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -27,7 +28,7 @@ createRoot(document.getElementById('root')).render(
 
             <Route path='/mkr' element={<Makarov />} >
               <Route path='/mkr/blogs' element={<Blogslist />} />
-              <Route path='/mkr/blog/:blogid' element={<Blog />} />
+              <Route path='/mkr/blog/:blogid' element={<Blogpage />} />
               <Route path='/mkr/about' element={<About />} />
             </Route>
 

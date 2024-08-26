@@ -12,9 +12,16 @@ export const Blog = () => {
     useEffect(() => {
         (async () => {
             try {
-                const blog = await Blogbase.getoneblog(blogid)
-                if (blog) {
-                    setblogdata(blog)
+                if (blogid) {
+                    const blog = await Blogbase.getoneblog(blogid)
+                    if (blog) {
+                        setblogdata(blog)
+                    }
+                }else{
+                    const letestblog = await Blogbase.firstoneblog()
+                    if (letestblog) {
+                        setblogdata(letestblog?.documents[0])
+                    }
                 }
             } catch (error) {
                 console.log(error);
@@ -23,7 +30,7 @@ export const Blog = () => {
     }, [blogid])
 
     return blogdata ? (
-        <div className='  '>
+        <div className=' w-full'>
             <div className='py-5'>
                 <div className=' mulish selection:text-black selection:bg-white'>
                     <h2 className=' text-neutral-100 first-letter:capitalize text-[2.1rem]'>{blogdata?.title}</h2>
@@ -40,7 +47,7 @@ export const Blog = () => {
                 </div>
             </div>
             <TracingBeam>
-                <div className='ml-20 max-sm:ml-1'> {parse(plaintohtml(blogdata.content))}</div>
+                <div className='ml-20 max-sm:ml-1'> {parse(plaintohtml(blogdata?.content))}</div>
             </TracingBeam>
         </div>
     ) : null

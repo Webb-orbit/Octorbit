@@ -29,6 +29,24 @@ class blogclass{
         return await this.blogs.updateDocument(Appwriteconf.appwritebase, Appwriteconf.blogcollid, docid, {title, description, content, creator, active})
     }
 
+    async findactiveorunacblogs(param){
+        console.log(param);
+        
+        return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid, [
+            Query.equal("active", param),
+            Query.limit(5),
+            Query.orderDesc("$createdAt"),
+        ] )
+    }
+    async findactiveorunacblogsnext(param, lastid){
+        return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid, [
+            Query.limit(5),
+            Query.orderDesc("$createdAt"),
+            Query.equal("active", param),
+            Query.cursorAfter(lastid),
+        ] )
+    }
+
     async firstlistblogs(){
         return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid, [
             Query.limit(5),
@@ -49,6 +67,31 @@ class blogclass{
         return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid, [
             Query.limit(20),
             Query.orderDesc("$createdAt")
+        ])
+    }
+
+    async firstoneblog(){
+        return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid, [
+            Query.limit(1),
+            Query.orderDesc("$createdAt"),
+            Query.equal("active", true)
+        ])
+    }
+
+    async searchonblogs(keyword){
+        return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid,[
+            Query.search("title", keyword),
+            Query.limit(2),
+            Query.orderDesc("$createdAt")
+        ])
+    }
+
+    async searchnextonblogs(keyword,lastid){
+        return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid,[
+            Query.search("title", keyword),
+            Query.orderDesc("$createdAt"),
+            Query.limit(20),
+            Query.cursorAfter(lastid),
         ])
     }
 
