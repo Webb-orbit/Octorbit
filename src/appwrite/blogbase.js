@@ -29,24 +29,6 @@ class blogclass{
         return await this.blogs.updateDocument(Appwriteconf.appwritebase, Appwriteconf.blogcollid, docid, {title, description, content, creator, active})
     }
 
-    async findactiveorunacblogs(param){
-        console.log(param);
-        
-        return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid, [
-            Query.equal("active", param),
-            Query.limit(5),
-            Query.orderDesc("$createdAt"),
-        ] )
-    }
-    async findactiveorunacblogsnext(param, lastid){
-        return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid, [
-            Query.limit(5),
-            Query.orderDesc("$createdAt"),
-            Query.equal("active", param),
-            Query.cursorAfter(lastid),
-        ] )
-    }
-
     async firstlistblogs(){
         return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid, [
             Query.limit(5),

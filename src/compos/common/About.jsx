@@ -27,21 +27,22 @@ i write not because i impressed someone.
 
 i write because i express yourself.
 i write because i express emotions.
-i write because i will to become 2.0.
+i write because i will see to becomeing 2.0.
+
 ---
 
 
 `
     return (
         <>
-            <div>
+            <div className=" selection:bg-white selection:text-black">
                 <h1 className='poppins selection:text-black selection:bg-white text-[2rem] capitalize font-bold text-transparent bg-clip-text bg-gradient-to-br  from-neutral-100 to-neutral-500 '> about me? </h1>
                 <p className=' poppins selection:text-black selection:bg-white text-neutral-500 uppercase font-medium text-[0.9rem] opacity-90'> how am i as makarov ! </p >
                 <div className="inter text-[1.1rem] text-neutral-200 max-sm:text-[0.9rem]">
                     {parse(plaintohtml(abouts))}
                 </div>
                 <div>
-                    <div className="flex items-center gap-1 text-[0.9rem] text-neutral-400">you connect on <Link to="https://x.com/webbenemies"><img className="w-[1rem]" src={xlogo} /></Link></div>
+                <div className="flex float-right my-5 px-5 bg-neutral-800/50 py-1 rounded-md cursor-default items-center gap-1 text-[0.9rem] text-neutral-400">you connect on <Link to="https://x.com/webbenemies"><img className="w-[1rem]" src={xlogo} /></Link></div>
                 </div>
             </div>
         </>

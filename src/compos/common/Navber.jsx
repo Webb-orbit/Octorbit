@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom"
 import { Cbuttons } from "../utiles/Cbuttons"
 import Logo from "./Logo"

@@ -11,9 +11,7 @@ const Dashoverview = () => {
     const [searchvalue, setsearchvalue] = useState("")
     const [searched, setsearched] = useState(false)
     const [updated, setupdated] = useState(false)
-    const [activedblogs, setactivedblogs] = useState(false)
-
-    const placeholders = ["search"];
+    const placeholders = ["search", "on this site"];
 
     useEffect(() => {
         (async () => {
@@ -67,22 +65,6 @@ const Dashoverview = () => {
         }
     }
 
-    const activeorunactive = async()=>{
-        try {
-            const searchapp = await Blogbase.findactiveorunacblogs(activedblogs)
-            if (searchapp) {
-                setsearched(true)
-                console.log(searchapp);
-                
-                setblogdata(searchapp.documents)
-                setdatalogn(searchapp.total)
-                setactivedblogs(pre=> !pre)
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
     const resetsearch = ()=>{
         setsearched(false)
         setupdated(pre=> !pre)
@@ -93,7 +75,6 @@ const Dashoverview = () => {
             <div className=' flex  items-center gap-3'>
                 <PlaceholdersAndVanishInput placeholders={placeholders} onChange={(e)=>setsearchvalue(e.target.value)} onSubmit={searchfun}/>
                 {searched && <Cbuttons text="reset" onClick={resetsearch}/>}
-                {<Cbuttons text={`${activedblogs?"unactive":"active"}`} onClick={activeorunactive}/>}
             </div>
             <div>
                 <h3 className='py-5 selection:text-black selection:bg-white text-[1.5rem] capitalize font-bold text-transparent bg-clip-text bg-gradient-to-br  from-neutral-100 to-neutral-500 '>all blogs</h3>

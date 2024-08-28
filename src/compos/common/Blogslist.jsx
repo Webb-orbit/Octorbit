@@ -15,8 +15,6 @@ const Blogslist = ({header=true}) => {
                 const fetched = await Blogbase.firstlistblogs()
                 setblogdata(fetched.documents)
                 setdatalogn(fetched.total)
-                console.log(fetched.documents);
-                
             } catch (error) {
                 console.log(error);
             }
@@ -27,7 +25,6 @@ const Blogslist = ({header=true}) => {
         try {
             let lastid = blogdata[blogdata.length - 1].$id
             const fetched = await Blogbase.listblogs(lastid)
-            console.log(fetched);
             setblogdata(pre => [...pre, ...fetched.documents])
         } catch (error) {
             console.log(error);
