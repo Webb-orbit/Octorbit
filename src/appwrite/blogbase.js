@@ -77,6 +77,12 @@ class blogclass{
         ])
     }
 
+    async activeorunactiveblogs(param){
+        return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid, [
+            Query.equal("active", param)
+        ])
+    }
+
 }
 
 const Blogbase = new blogclass()

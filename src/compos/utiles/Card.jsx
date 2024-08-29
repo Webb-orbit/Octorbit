@@ -15,9 +15,7 @@ const Card = ({ children, title, opener, setopener, ...props }) => {
                 <div {...props} className='flex flex-col gap-2 items-center  justify-center h-full'>
                     {children}
                 </div>
-
             </div>
-
         </div>
     )
 }

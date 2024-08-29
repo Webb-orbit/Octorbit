@@ -22,6 +22,7 @@ const Dashadmin = () => {
             } catch (error) {
                 console.log(error);
                 setloading(false)
+                naviget("/")
             }
         })()
     }, [])

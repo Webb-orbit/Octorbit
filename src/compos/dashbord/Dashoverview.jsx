@@ -11,6 +11,7 @@ const Dashoverview = () => {
     const [searchvalue, setsearchvalue] = useState("")
     const [searched, setsearched] = useState(false)
     const [updated, setupdated] = useState(false)
+    const [active, setactive] = useState(false)
     const placeholders = ["search", "on this site"];
 
     useEffect(() => {
@@ -65,6 +66,18 @@ const Dashoverview = () => {
         }
     }
 
+    const acunblogs = async()=>{
+        try {
+            const blogs = await Blogbase.activeorunactiveblogs(active)
+            setsearched(true)
+            setblogdata(blogs.documents)
+            setdatalogn(blogs.total)
+            setactive(pre=> !pre)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const resetsearch = ()=>{
         setsearched(false)
         setupdated(pre=> !pre)
@@ -75,6 +88,7 @@ const Dashoverview = () => {
             <div className=' flex  items-center gap-3'>
                 <PlaceholdersAndVanishInput placeholders={placeholders} onChange={(e)=>setsearchvalue(e.target.value)} onSubmit={searchfun}/>
                 {searched && <Cbuttons text="reset" onClick={resetsearch}/>}
+                {<Cbuttons text={active?"actives":"unactives"} tclass='text-[0.8rem]' onClick={acunblogs}/>}
             </div>
             <div>
                 <h3 className='py-5 selection:text-black selection:bg-white text-[1.5rem] capitalize font-bold text-transparent bg-clip-text bg-gradient-to-br  from-neutral-100 to-neutral-500 '>all blogs</h3>
