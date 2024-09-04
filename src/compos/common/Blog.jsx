@@ -73,7 +73,7 @@ export const Blog = ({ ani = true }) => {
                         <Cbuttons onClick={copylink} text='copy' tclass='text-[0.9rem]' />
                     </div>
                     <div>
-                        <Link to={`https://twitter.com/intent/tweet?text=${import.meta.env.VITE_ENDPOINT}/mkr/blog/${blogdata?.$id}`} className="twitter-share-button">Tweet on x</Link>
+                        <Link to={`https://twitter.com/intent/tweet?url=${import.meta.env.VITE_ENDPOINT}/mkr/blog/${blogdata?.$id}&text=${blogdata.title}`} className="twitter-share-button">Tweet on x</Link>
                     </div>
                 </div>
             </Card>
