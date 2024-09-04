@@ -22,7 +22,7 @@ const Home = () => {
         <div>
           <Header />
           <div className={`mx-auto min-h-screen pb-6 w-[80%] flex items-center flex-col gap-5 max-sm:w-[90%]`}>
-            <h1 className=' mt-10 capitalize mulish text-[1.4rem] font-semibold'>letest            blog</h1>
+            <h1 className=' mt-10 capitalize mulish text-[1.4rem] font-semibold'>letest blog</h1>
             <div className={`w-full ${expaned ? "h-full" : " h-[90vh] overflow-hidden"}`}>
               <Blog ani={false} />
             </div>
