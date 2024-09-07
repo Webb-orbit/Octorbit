@@ -13,8 +13,13 @@ import Dashoverview from './compos/dashbord/Dashoverview.jsx'
 import About from './compos/common/About.jsx'
 import Addblog from './compos/dashbord/Addblog.jsx'
 import Editblog from './compos/dashbord/Editblog.jsx'
-import { Blog } from './compos/common/Blog.jsx'
 import Blogpage from './pages/Blogpage.jsx'
+ 
+
+import { Analytics } from "@vercel/analytics/react"
+
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -37,11 +42,11 @@ createRoot(document.getElementById('root')).render(
               <Route path='/dashboard/create' element={<Addblog />} />
               <Route path='/dashboard/edit/:blogid' element={<Editblog />} />
             </Route>
-
           </Route>
 
         </Routes>
       </BrowserRouter>
+            <Analytics/>
     </Provider>
   </StrictMode>,
 )
