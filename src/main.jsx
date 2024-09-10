@@ -14,7 +14,7 @@ import About from './compos/common/About.jsx'
 import Addblog from './compos/dashbord/Addblog.jsx'
 import Editblog from './compos/dashbord/Editblog.jsx'
 import Blogpage from './pages/Blogpage.jsx'
- 
+
 
 import { Analytics } from "@vercel/analytics/react"
 
@@ -46,7 +46,7 @@ createRoot(document.getElementById('root')).render(
 
         </Routes>
       </BrowserRouter>
-            <Analytics/>
+      <Analytics />
     </Provider>
   </StrictMode>,
 )
