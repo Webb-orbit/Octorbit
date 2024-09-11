@@ -44,9 +44,6 @@ export const Blog = ({ ani = true }) => {
         }
     }
 
-    if (true) {
-        return <>opps! 404. something went wronge</>
-    }
 
     return blogdata ? (
         <>
