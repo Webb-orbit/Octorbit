@@ -37,13 +37,10 @@ export const Blog = ({ ani = true }) => {
 
     const copylink = () => {
         if (blogdata !== null) {
-            console.log(blogdata, "blogdata");
-
             navigator.clipboard.writeText(`${import.meta.env.VITE_ENDPOINT}/mkr/blog/${blogdata.$id}`)
             setcopyopen(false)
         }
     }
-
 
     return blogdata ? (
         <>
@@ -81,3 +78,4 @@ export const Blog = ({ ani = true }) => {
         </>
     ) : null
 }
+

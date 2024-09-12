@@ -10,7 +10,7 @@ const Card = ({ children, title, opener, setopener, ...props }) => {
                     <p className='text-[1rem] poppins capitalize w-[90%] overflow-hidden'>{title}</p>
                     <button onClick={() => setopener(pre => !pre)} type='button' className='text-[1rem] material-symbols-outlined'>close</button>
                 </div>
-
+ 
                 <div {...props} className='flex flex-col gap-2 items-center  justify-center h-full'>
                     {children}
                 </div>
