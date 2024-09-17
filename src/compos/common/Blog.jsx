@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Blogbase from '../../appwrite/blogbase'
