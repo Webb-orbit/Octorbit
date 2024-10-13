@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
+
 import './index.css'
 import { Provider } from 'react-redux'
 import { store } from './store/configstore.js'
@@ -17,6 +18,7 @@ import Blogpage from './pages/Blogpage.jsx'
 
 
 import { Analytics } from "@vercel/analytics/react"
+import Login from './compos/auth/Login.jsx'
 
 
 
@@ -30,6 +32,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='/' element={<App />}>
 
             <Route path='/' index element={<Home />} />
+            <Route path='/hellolog' element={<Login />} />
 
             <Route path='/mkr' element={<Makarov />} >
               <Route path='/mkr/blogs' element={<Blogslist />} />
