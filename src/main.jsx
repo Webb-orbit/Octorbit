@@ -18,7 +18,6 @@ import Blogpage from './pages/Blogpage.jsx'
 
 
 import { Analytics } from "@vercel/analytics/react"
-import Login from './compos/auth/Login.jsx'
 
 
 
@@ -32,7 +31,6 @@ createRoot(document.getElementById('root')).render(
           <Route path='/' element={<App />}>
 
             <Route path='/' index element={<Home />} />
-            <Route path='/hellolog' element={<Login />} />
 
             <Route path='/mkr' element={<Makarov />} >
               <Route path='/mkr/blogs' element={<Blogslist />} />
