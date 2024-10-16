@@ -14,13 +14,13 @@ import Dashoverview from './compos/dashbord/Dashoverview.jsx'
 import About from './compos/common/About.jsx'
 import Addblog from './compos/dashbord/Addblog.jsx'
 import Editblog from './compos/dashbord/Editblog.jsx'
+
 import Blogpage from './pages/Blogpage.jsx'
+import Login from './compos/auth/Login.jsx'
+
 
 
 import { Analytics } from "@vercel/analytics/react"
-
-
-
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -29,6 +29,7 @@ createRoot(document.getElementById('root')).render(
         <Routes>
 
           <Route path='/' element={<App />}>
+          <Route path='/hellolog' element={<Login />} />
 
             <Route path='/' index element={<Home />} />
 

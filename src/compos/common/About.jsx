@@ -12,7 +12,7 @@ I am a front-end web developer with 1.7 years of experience. I began my journey 
 Now, I'm expanding my skills by learning **backend development** and building simple websites.
 
 **Why did I start writing blogs?** Ahh, one day, I went to my relative's house to work on a website, mainly because they had Wi-Fi !. 
-While I was there, a question randomly popped into my head: ** "Who is the founder of ChatGPT?" ** 
+While I was there, a question randomly popped into my head: ** Who is the founder of ChatGPT? ** 
 I Googled it and found out it was **Sam Altman.**
 That discovery led me to his blog, where I ended up reading **around 10 blogs** in one sitting. 
 My head was practically exploding with a **headache** from all the reading,  but it sparked a thought: 
@@ -27,7 +27,7 @@ i write not because i impressed someone.
 
 i write because i express yourself.
 i write because i express emotions.
-i write because i will see to becomeing 2.0.
+i write because i will see myself becomeing 2.0.
 
 ---
 

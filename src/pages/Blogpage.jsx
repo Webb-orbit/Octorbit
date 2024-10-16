@@ -4,7 +4,7 @@ import Blogslist from '../compos/common/Blogslist'
 const Blogpage = () => {
   return (
     <>
-    <div className='flex flex-col gap-20'>
+    <div className='flex flex-col gap-16'>
     <Blog/>
     <Blogslist header={false}/>
     </div>
