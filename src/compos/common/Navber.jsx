@@ -18,7 +18,7 @@ const Navber = ({classes}) => {
                 <Cbuttons
                     onClick={() => naviget("/mkr/blogs")}
                     icon={"eco"}
-                    text="blogs" tclass={"text-[0.9rem]"} />
+                    text="Thoughts" tclass={"text-[0.9rem]"} />
                 {isadmin && <Cbuttons
                     onClick={() => naviget("/dashboard/overview")}
                     text="dashboard" tclass={"text-[0.9rem]"} />}
