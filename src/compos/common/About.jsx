@@ -8,7 +8,7 @@ const About = () => {
 const abouts = `---
 **Hello! First of all, my real name isn't Makarov; it's just my nickname.**
 
-I am makarov. how still creating our Identity.
+I am makarov. who still creating our Identity.
 
 **Why did I start writing?** Ahh, one day, I went to my relative's house to work on a website, mainly because they had Wi-Fi !. 
 While I was there, a question randomly popped into my mind: ** Who is the founder of ChatGPT? ** 
