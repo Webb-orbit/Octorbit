@@ -35,7 +35,7 @@ const Blogslist = ({header=true}) => {
     return (
         <>
             <div className={`w-full ${header?"block":"hidden"}`}>
-                <h1 className='selection:text-black selection:bg-white text-[2rem] capitalize font-bold text-transparent bg-clip-text bg-gradient-to-br  from-neutral-100 to-neutral-500 '>all Thoughts</h1>
+                <h1 className='selection:text-black selection:bg-white text-[2rem] capitalize font-bold text-transparent bg-clip-text bg-gradient-to-br  from-neutral-100 to-neutral-500 '>my Thoughts</h1>
                 <p className=' selection:text-black selection:bg-white text-neutral-500 uppercase font-medium text-[0.9rem] opacity-90'>..............</p >
             </div>
             <div className=' flex flex-col gap-3'>

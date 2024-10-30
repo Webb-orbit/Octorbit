@@ -46,14 +46,14 @@ export const Blog = ({ ani = true }) => {
     return blogdata ? (
         <>
             <div className=' min-w-full'>
-                <div className='py-5'>
-                    <div className=' mulish selection:text-black selection:bg-white'>
-                        <h2 className=' text-neutral-100 first-letter:capitalize text-[2.1rem]'>{blogdata?.title}</h2>
+                <div className='py-5 inter '>
+                    <div className='  selection:text-black selection:bg-white'>
+                        <h2 className=' text-neutral-200 font-semibold  first-letter:capitalize text-[2rem]'>{blogdata?.title}</h2>
                         <p className=' w-[80%] text-[0.9rem] text-neutral-200 font-medium max-sm:w-full max-sm:text-[0.7rem]'>{blogdata?.description}</p>
                     </div>
-                    <div className=' mulish flex items-center py-8 justify-between selection:text-black selection:bg-white'>
+                    <div className='  flex items-center py-8 justify-between selection:text-black selection:bg-white'>
                         <div className='flex flex-col '>
-                            <h3 className=' capitalize text-[1.3rem] text-neutral-300 font-medium'>makarov</h3>
+                            <h3 className=' capitalize text-[1.3rem] text-neutral-300 font-medium '>makarov</h3>
                             <p className=' text-neutral-400 text-[0.8rem] font-medium'>{blogdata.date}</p>
                         </div>
                         <div className='flex gap-3 items-center text-[0.9rem]'>
@@ -62,8 +62,8 @@ export const Blog = ({ ani = true }) => {
                     </div>
                 </div>
                 {ani ? (<TracingBeam>
-                    <div className='ml-20 max-sm:ml-1'> {parse(plaintohtml(blogdata?.content))}</div>
-                </TracingBeam>) : (<div className='ml-20 max-sm:ml-1'> {parse(plaintohtml(blogdata?.content))}</div>)}
+                    <div className='ml-20 max-sm:ml-1 inter'> {parse(plaintohtml(blogdata?.content))}</div>
+                </TracingBeam>) : (<div className='inter ml-20 max-sm:ml-1'> {parse(plaintohtml(blogdata?.content))}</div>)}
             </div>
             <Card title={"copy share link"} setopener={setcopyopen} opener={copyopen}>
                 <div className='flex justify-center flex-col items-center gap-2 h-full w-full'>

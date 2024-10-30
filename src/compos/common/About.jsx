@@ -5,7 +5,8 @@ import xlogo from "../../files/xlogow.png"
 
 const About = () => {
 
-const abouts = `---
+const abouts = `
+
 **Hello! First of all, my real name isn't Makarov; it's just my nickname.**
 
 I am makarov. who still creating our Identity.
@@ -28,7 +29,7 @@ i write because i like it!
 i write because i express myself!
 i write because i express Thoughts!
 i write because i will see changing myself!
----
+
 
 
 `
@@ -36,8 +37,8 @@ i write because i will see changing myself!
         <>
             <div className=" selection:bg-white selection:text-black">
                 <h1 className='poppins selection:text-black selection:bg-white text-[2rem] capitalize font-bold text-transparent bg-clip-text bg-gradient-to-br  from-neutral-100 to-neutral-500 '> about me? </h1>
-                <p className=' poppins selection:text-black selection:bg-white text-neutral-500 uppercase font-medium text-[0.9rem] opacity-90'> how am i as makarov ! </p >
-                <div className="inter text-[1.1rem] text-neutral-200 max-sm:text-[0.9rem]">
+                <p className=' poppins selection:text-black selection:bg-white text-neutral-500 uppercase font-medium text-[0.9rem] opacity-90'> who am i as makarov ! </p >
+                <div className="inter text-[0.9rem] text-neutral-200 max-sm:text-[0.9rem]">
                     {parse(plaintohtml(abouts))}
                 </div>
                 <div>
