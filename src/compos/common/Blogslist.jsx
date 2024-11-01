@@ -2,16 +2,21 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Blogbase from '../../appwrite/blogbase'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Cbuttons } from '../utiles/Cbuttons'
 
 
 const Blogslist = ({header=true}) => {
+    const {blogid} = useParams()
+    console.log(blogid);
+    
     const [blogdata, setblogdata] = useState([])
     const [datalogn, setdatalogn] = useState(null)
+    const [id, setid] = useState(undefined)
 
     useEffect(() => {
         (async () => {
+            setid(blogid)
             try {
                 const fetched = await Blogbase.firstlistblogs()
                 setblogdata(fetched.documents)
@@ -20,7 +25,11 @@ const Blogslist = ({header=true}) => {
                 console.log(error);
             }
         })()
-    }, [])
+
+        return()=>{
+            setid(undefined)
+        }
+    }, [blogid])
 
     const nextblogs = async () => {
         try {
@@ -42,8 +51,8 @@ const Blogslist = ({header=true}) => {
                 {blogdata.map((e) => (
                     <Link key={e.$id} to={`/mkr/blog/${e.$id}/#`}>
                         <div className=' flex items-center overflow-hidden group max-sm:flex-col max-sm:items-start my-2'>
-                            <p className=' w-[25%] text-neutral-400 group-hover:text-neutral-100 duration-75 font-medium max-sm:w-full'>{e.date}</p>
-                            <p className=' w-[75%] line-clamp-1 text-neutral-300 group-hover:text-neutral-100 duration-75 max-sm:w-full max-sm:line-clamp-2'>{e.title}</p>
+                            <p className={`w-[25%]  group-hover:text-neutral-100 duration-75 font-medium max-sm:w-full ${id == e.$id? "text-neutral-100 text-[0.9rem]":"text-[1rem] text-neutral-400"}`}>{e.date}</p>
+                            <p className={` w-[75%] line-clamp-1 group-hover:text-neutral-100 duration-75 max-sm:w-full max-sm:line-clamp-2 ${id == e.$id? "text-neutral-100 text-[0.9rem]":"text-[1rem] text-neutral-400"}`}>{e.title}</p>
                         </div>
                     </Link>
                 ))}
