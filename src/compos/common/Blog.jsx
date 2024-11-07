@@ -1,17 +1,19 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Blogbase from '../../appwrite/blogbase'
 import { TracingBeam } from '../utiles/Trackingline'
 import plaintohtml from 'markdown-to-htm'
-import parse from 'html-react-parser';
 import Card from '../utiles/Card'
 import { Cbuttons } from '../utiles/Cbuttons'
+import { codeToHtml } from 'shiki'
 
 export const Blog = ({ ani = true }) => {
     const { blogid } = useParams()
     const [blogdata, setblogdata] = useState(null)
     const [copyopen, setcopyopen] = useState(false)
+    const trackdiv = useRef(null)
+    const withouttrackdiv = useRef(null)
 
 
     useEffect(() => {
@@ -22,7 +24,6 @@ export const Blog = ({ ani = true }) => {
         (async () => {
             try {
                 if (blogid) {
-                    setblogdata(null)
                     const blog = await Blogbase.getoneblog(blogid)
                     if (blog) {
                         setblogdata(blog)
@@ -31,13 +32,16 @@ export const Blog = ({ ani = true }) => {
                     const letestblog = await Blogbase.firstoneblog()
                     if (letestblog) {
                         setblogdata(letestblog?.documents[0])
-
                     }
                 }
             } catch (error) {
                 console.log(error);
             }
         })()
+         
+        return()=>{
+            setblogdata(null)
+        }
     }, [blogid])
 
     const copylink = () => {
@@ -46,6 +50,36 @@ export const Blog = ({ ani = true }) => {
             setcopyopen(false)
         }
     }
+
+    useEffect(() => {
+        if (trackdiv.current) {
+            let inner = plaintohtml(blogdata.content)
+
+            trackdiv.current.innerHTML = inner
+            const pres = Array.from(document.getElementsByTagName("pre"))
+            pres.map(async (e) => {
+                console.log(e.innerHTML)
+                const code = await codeToHtml(e.innerText, {
+                    theme: "aurora-x",
+                    lang: "jsx",
+                })
+                e.innerHTML = code
+            })
+        }else if (withouttrackdiv.current) {
+            let inner = plaintohtml(blogdata.content)
+
+            withouttrackdiv.current.innerHTML = inner
+            const pres = Array.from(document.getElementsByTagName("pre"))
+            pres.map(async (e) => {
+                console.log(e.innerHTML)
+                const code = await codeToHtml(e.innerText, {
+                    theme: "aurora-x",
+                    lang: "jsx",
+                })
+                e.innerHTML = code
+            })
+        }
+    }, [blogid, blogdata])
 
     return  (
         <>
@@ -66,8 +100,8 @@ export const Blog = ({ ani = true }) => {
                     </div>
                 </div>
                 {!blogdata? (<div className=' animate-pulse h-[50vh] w-full bg-zinc-900/80 rounded-sm'></div>): ani ? (<TracingBeam>
-                    <div className='ml-20 max-sm:ml-1 source-sans leading-7 text-zinc-300'> {parse(plaintohtml(blogdata?.content))}</div>
-                </TracingBeam>) : (<div className='inter ml-20 max-sm:ml-1'> {parse(plaintohtml(blogdata?.content))}</div>)
+                    <div ref={trackdiv} className='ml-20 max-sm:ml-1 source-sans leading-7 text-zinc-300'></div>
+                </TracingBeam>) : (<div ref={withouttrackdiv} className='inter ml-20 max-sm:ml-1'></div>)
                 }
             </div>
             {blogdata && <Card title={"copy share link"} setopener={setcopyopen} opener={copyopen}>

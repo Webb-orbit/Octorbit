@@ -51,12 +51,28 @@ hr {
     width: 95%;
     color: white;
     padding: 0.5rem;
-    background-color: rgba(41, 41, 41, 0.477);
+    background-color: black;
     font-size: 0.8rem;
     border-radius: 0.5rem;
     display: block;
-    
+    overflow-wrap: break-word;
+    text-wrap:wrap;
 }
+
+
+.pre .shiki{
+    margin: 0.5rem auto;
+    width: 95%;
+    color: white;
+    padding: 0.5rem;
+    background-color: black;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    display: block;
+    overflow-wrap: break-word;
+    text-wrap:wrap;
+}
+
 .inline {
     width: 95%;
     color: white;

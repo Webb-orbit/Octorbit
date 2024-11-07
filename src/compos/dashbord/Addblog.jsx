@@ -83,12 +83,13 @@ const Addblog = ({ prevals = false }) => {
                 </div>
                 <div className="flex gap-2 items-center">
                     <Toggle togg={blogactived} settogg={setblogactived} />
-                    <button className=" capitalize font-medium text-[0.9rem]" type="button" onClick={() => setblogactived(pre => !pre)}>show live</button>
+                    <button  className=" capitalize font-medium text-[0.9rem]" type="button" onClick={() => setblogactived(pre => !pre)}>show live</button>
                 </div>
 
                 <EditorBlock content={editorvalue} setcontent={seteditorvalue} />
                 {errors.root && <div><p className="uppercase text-red-500 animate-pulse font-medium select-none text-[0.7rem]">{errors.root.message}</p></div>}
-                <Cbuttons type="submit" text={`${prevals ? "update" : "share"}`} bclass="w-fit px-5" icon={"thread_unread"} tclass="text-[0.9rem]" />
+                {prevals && <p className="text-[0.8rem] text-neutral-500">{predate}</p>}
+                <Cbuttons disabled={isSubmitting}  type="submit" text={`${prevals ? "update" : "share"}`} bclass="w-fit px-5" icon={"thread_unread"} tclass="text-[0.9rem]" />
             </form>
         </div>
     )
