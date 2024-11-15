@@ -21,6 +21,7 @@ import Login from './compos/auth/Login.jsx'
 
 
 import { Analytics } from "@vercel/analytics/react"
+import Test from './pages/test.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -30,6 +31,7 @@ createRoot(document.getElementById('root')).render(
 
           <Route path='/' element={<App />}>
           <Route path='/hellolog' element={<Login />} />
+          <Route path='/test' element={<Test />} />
 
             <Route path='/' index element={<Home />} />
 

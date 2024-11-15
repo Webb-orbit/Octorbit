@@ -56,11 +56,11 @@ export const Blog = ({ ani = true }) => {
             let inner = plaintohtml(blogdata.content)
 
             trackdiv.current.innerHTML = inner
-            const pres = Array.from(document.getElementsByTagName("pre"))
+            const pres = Array.from(document.getElementsByClassName("pre"))
             pres.map(async (e) => {
                 console.log(e.innerHTML)
                 const code = await codeToHtml(e.innerText, {
-                    theme: "aurora-x",
+                    theme: "ayu-dark",
                     lang: "jsx",
                 })
                 e.innerHTML = code
@@ -69,7 +69,7 @@ export const Blog = ({ ani = true }) => {
             let inner = plaintohtml(blogdata.content)
 
             withouttrackdiv.current.innerHTML = inner
-            const pres = Array.from(document.getElementsByTagName("pre"))
+            const pres = Array.from(document.getElementsByClassName("pre"))
             pres.map(async (e) => {
                 console.log(e.innerHTML)
                 const code = await codeToHtml(e.innerText, {

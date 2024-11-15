@@ -48,7 +48,6 @@ hr {
 
 .pre {
     margin: 0.5rem auto;
-    width: 95%;
     color: white;
     padding: 0.5rem;
     background-color: black;
@@ -61,13 +60,10 @@ hr {
 
 
 .pre .shiki{
-    margin: 0.5rem auto;
-    width: 95%;
     color: white;
     padding: 0.5rem;
-    background-color: black;
     font-size: 0.8rem;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     display: block;
     overflow-wrap: break-word;
     text-wrap:wrap;

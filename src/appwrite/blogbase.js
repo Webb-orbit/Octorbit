@@ -31,7 +31,7 @@ class blogclass{
 
     async firstlistblogs(){
         return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid, [
-            Query.limit(5),
+            Query.limit(10),
             Query.orderDesc("$createdAt"),
             Query.equal("active", true)
         ])
@@ -39,7 +39,7 @@ class blogclass{
 
     async listblogs(lastid){
         return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid, [
-            Query.limit(5),
+            Query.limit(10),
             Query.orderDesc("$createdAt"),
             Query.cursorAfter(lastid),
         ])
@@ -63,7 +63,7 @@ class blogclass{
     async searchonblogs(keyword){
         return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.blogcollid,[
             Query.search("title", keyword),
-            Query.limit(2),
+            Query.limit(10),
             Query.orderDesc("$createdAt")
         ])
     }
