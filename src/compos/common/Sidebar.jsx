@@ -33,7 +33,6 @@ export const Sidebar = () => {
       setloading(true)
       let lastid = blogdata[blogdata.length - 1].$id
       const fetched = await Blogbase.listblogs(lastid)
-      console.log(fetched);
       setblogdata(pre => [...pre, ...fetched.documents])
       setloading(false)
     } catch (error) {

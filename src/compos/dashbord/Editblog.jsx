@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Blogbase from '../../appwrite/blogbase'
 import Addblog from './Addblog'
@@ -14,7 +14,6 @@ const Editblog = () => {
             try {
                 const finded = await Blogbase.getoneblog(blogid)
                 if (finded) {
-                    console.log("finded->",finded);
                     setbloginfo(finded)
                 }else{
                     naviget("/")

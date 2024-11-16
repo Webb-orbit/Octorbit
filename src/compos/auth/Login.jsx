@@ -6,7 +6,6 @@ const [password, setpassword] = useState("")
   const ligin = async()=>{
     try {
       const login = Admin.loginadmin("webbenemies@gmail.com", password)
-      console.log(login);
     } catch (error) {
       console.log(error);
     }

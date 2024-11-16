@@ -8,9 +8,7 @@ import Listskliton from '../utiles/Listskliton'
 
 
 const Blogslist = ({header=true}) => {
-    const {blogid} = useParams()
-    console.log(blogid);
-    
+    const {blogid} = useParams()    
     const [blogdata, setblogdata] = useState([])
     const [datalogn, setdatalogn] = useState(null)
     const [id, setid] = useState(undefined)

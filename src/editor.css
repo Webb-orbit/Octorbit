@@ -46,20 +46,7 @@ hr {
     height: fit-content;
 }
 
-.pre {
-    margin: 0.5rem auto;
-    color: white;
-    padding: 0.5rem;
-    background-color: black;
-    font-size: 0.8rem;
-    border-radius: 0.5rem;
-    display: block;
-    overflow-wrap: break-word;
-    text-wrap:wrap;
-}
-
-
-.pre .shiki{
+.pre{
     color: white;
     padding: 0.5rem;
     font-size: 0.8rem;
@@ -67,6 +54,58 @@ hr {
     display: block;
     overflow-wrap: break-word;
     text-wrap:wrap;
+} 
+
+.wrapshiki{
+    color: white;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+    display: block;
+    overflow-wrap: break-word;
+    text-wrap:wrap;
+} 
+
+.shiki{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-width: fit-content;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+}
+.highlighted{
+    position: absolute;
+    width: 100%;
+    background-color:rgba(92, 92, 92, 0.253);
+}
+.add{
+    position: absolute;
+    width: 100%;
+    background-color:rgba(172, 255, 47, 0.200);
+}
+.add:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -4px;
+    bottom: 0;
+    width: 4px;
+    background-color: royalblue;
+}
+.remove:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -4px;
+    bottom: 0;
+    width: 4px;
+    background-color:rosybrown;
+}
+.remove{
+    position: absolute;
+    width: 100%;
+    background-color:rgba(255, 130, 47, 0.2);
 }
 
 .inline {
@@ -121,6 +160,9 @@ hr {
     background-color: #2a2a2a; /* Slightly darker background for the header */
     border-bottom: 2px solid #444; /* Darker bottom border */
 }
+
+
+.add
 
 
 @media only screen and (max-width: 600px) {

@@ -7,6 +7,10 @@ import plaintohtml from 'markdown-to-htm'
 import Card from '../utiles/Card'
 import { Cbuttons } from '../utiles/Cbuttons'
 import { codeToHtml } from 'shiki'
+import {
+    transformerNotationDiff,
+    transformerNotationHighlight
+  } from '@shikijs/transformers'
 
 export const Blog = ({ ani = true }) => {
     const { blogid } = useParams()
@@ -58,10 +62,13 @@ export const Blog = ({ ani = true }) => {
             trackdiv.current.innerHTML = inner
             const pres = Array.from(document.getElementsByClassName("pre"))
             pres.map(async (e) => {
-                console.log(e.innerHTML)
                 const code = await codeToHtml(e.innerText, {
                     theme: "ayu-dark",
                     lang: "jsx",
+                    transformers:[
+                        transformerNotationDiff(),
+                        transformerNotationHighlight()
+                    ]
                 })
                 e.innerHTML = code
             })
@@ -71,10 +78,13 @@ export const Blog = ({ ani = true }) => {
             withouttrackdiv.current.innerHTML = inner
             const pres = Array.from(document.getElementsByClassName("pre"))
             pres.map(async (e) => {
-                console.log(e.innerHTML)
                 const code = await codeToHtml(e.innerText, {
                     theme: "aurora-x",
                     lang: "jsx",
+                    transformers:[
+                        transformerNotationDiff(),
+                        transformerNotationHighlight()
+                    ]
                 })
                 e.innerHTML = code
             })

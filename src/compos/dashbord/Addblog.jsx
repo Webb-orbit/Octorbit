@@ -32,20 +32,17 @@ const Addblog = ({ prevals = false }) => {
                 if (!prevals) {
                     const upload = await Blogbase.createblog(data.title, data.description, editorvalue, admin.$id, date, blogactived)
                     if (upload) {
-                        console.log("uploaded->", upload);
                         naviget("/dashboard/overview")
                     }
                 } else {
                     const update = await Blogbase.updateblog(prevals.$id, { title: data.title, description: data.description, content: editorvalue, creator: admin.$id, active: blogactived })
                     if (update) {
-                        console.log("updated->", update);
                         naviget("/dashboard/overview")
                     }
                 }
             }
         } catch (error) {
             setError("root", { message: error.response?.message || "something went wronge" })
-            console.log(error.response)
         }
     }
 

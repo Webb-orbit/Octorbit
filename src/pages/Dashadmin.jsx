@@ -14,7 +14,6 @@ const Dashadmin = () => {
             try {
                 const admin = await Admin.getcurrentaccount()
                 if (admin && admin.labels.includes("admin")) {
-                    console.log("admin on ->", admin);
                     setloading(false)
                 } else {
                     naviget("/")

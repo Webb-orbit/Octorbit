@@ -2,6 +2,10 @@
 import { useEffect, useRef, useState } from 'react'
 import plaintohtml from 'markdown-to-htm'
 import "../../editor.css"
+import {
+    transformerNotationDiff,
+    transformerNotationHighlight
+  } from '@shikijs/transformers'
 
 import { codeToHtml } from 'shiki'
 
@@ -16,10 +20,13 @@ const EditorBlock = ({ content, setcontent }) => {
             outputref.current.innerHTML = inner
             const pres = Array.from(document.getElementsByClassName("pre"))
             pres.map(async (e) => {
-                console.log(e.innerHTML)
                 const code = await codeToHtml(e.innerText, {
                     theme:"ayu-dark",
                     lang: "jsx",
+                    transformers:[
+                        transformerNotationDiff(),
+                        transformerNotationHighlight()
+                    ]
                 })
                 e.innerHTML = code
             })

@@ -14,15 +14,11 @@ const App = () => {
     ; (async () => {
       try {
         const isadmin = await Admin.getcurrentaccount()
-        console.log(isadmin);
-
         if (isadmin && isadmin.labels.includes("admin")) {
-          console.log("yes you");
           disptch(storelogin(isadmin.$id))
           setloading(false)
         }
       } catch (error) {
-        console.log(error);
         setloading(false)
       }
     }

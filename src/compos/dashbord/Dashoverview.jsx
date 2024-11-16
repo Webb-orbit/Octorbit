@@ -20,8 +20,6 @@ const Dashoverview = () => {
                 const fetched = await Blogbase.firstlistblogsdashboard()
                 setblogdata(fetched.documents)
                 setdatalogn(fetched.total)
-                console.log(fetched.documents);
-
             } catch (error) {
                 console.log(error);
             }
@@ -32,7 +30,6 @@ const Dashoverview = () => {
         try {
             let lastid = blogdata[blogdata.length - 1].$id
             const fetched = await Blogbase.listblogs(lastid)
-            console.log(fetched);
             setblogdata(pre => [...pre, ...fetched.documents])
         } catch (error) {
             console.log(error);
@@ -54,8 +51,6 @@ const Dashoverview = () => {
 
     const nextsearchfun = async()=>{
         try {
-            console.log("onnext");
-            
             let lastid = blogdata[blogdata.length - 1].$id
             const searchapp = await Blogbase.searchnextonblogs(searchvalue, lastid)
             if (searchapp) {
