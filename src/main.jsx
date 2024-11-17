@@ -45,7 +45,7 @@ createRoot(document.getElementById('root')).render(
             <Route path='/dashboard' element={<Dashadmin />}>
               <Route path='/dashboard/overview' element={<Dashoverview />} />
               <Route path='/dashboard/create' element={<Addblog />} />
-              <Route path='/dashboard/blog/:blogid"' element={<Adminview />} />
+              <Route path='/dashboard/blog/:blogid' element={<Adminview />} />
               <Route path='/dashboard/edit/:blogid' element={<Editblog />} />
             </Route>
           </Route>

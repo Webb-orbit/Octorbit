@@ -114,13 +114,13 @@ export const Blog = ({ ani = true }) => {
                 </TracingBeam>) : (<div ref={withouttrackdiv} className='inter ml-20 max-sm:ml-1'></div>)
                 }
             </div>
-            {blogdata && <Card title={"copy share link"} setopener={setcopyopen} opener={copyopen}>
+            {blogdata && <Card title={"Get Share Link"} setopener={setcopyopen} opener={copyopen}>
                 <div className='flex justify-center flex-col items-center gap-2 h-full w-full'>
                     <div className='flex justify-center items-center gap-2 h-full w-full'>
                         <input readOnly defaultValue={`${import.meta.env.VITE_ENDPOINT}/mkr/blog/${blogdata?.$id}`} type='input' className=' outline-none rounded-sm text-black inter text-[0.9rem] px-2 w-[65%]' />
                         <Cbuttons onClick={copylink} text='copy' tclass='text-[0.9rem]' />
                     </div>
-                    <div>
+                    <div className='py-8'>
                         <Link target='_blank' to={`https://x.com/intent/tweet?url=${import.meta.env.VITE_ENDPOINT}/mkr/blog/${blogdata?.$id}&text=${blogdata.title}`}>Tweet on x</Link>
                     </div>
                 </div>

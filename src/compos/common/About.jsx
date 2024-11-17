@@ -5,7 +5,7 @@ import xlogo from "../../files/xlogow.png"
 
 const About = () => {
 
-const abouts = `
+    const abouts = `
 
 **Hello! First of all, my real name isn't Makarov; it's just my nickname.**
 
@@ -42,7 +42,7 @@ i write because i will see changing myself!
                     {parse(plaintohtml(abouts))}
                 </div>
                 <div>
-                <div className="flex float-right my-5 px-5 bg-neutral-800/50 py-1 rounded-md cursor-default items-center gap-1 text-[0.9rem] text-neutral-400">you connect on <Link to="https://x.com/webbenemies"><img className="w-[1rem]" src={xlogo} /></Link></div>
+                    <Link className='flex float-right items-center gap-2 bg-neutral-900 p-3 rounded-full' to="https://x.com/webbenemies"> <img className="w-[0.9rem] h-[0.9rem] tracking-tighter" src={xlogo} /></Link>
                 </div>
             </div>
         </>

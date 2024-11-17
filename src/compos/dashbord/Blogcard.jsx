@@ -38,8 +38,8 @@ const Blogcard = ({ data }) => {
         <div className='flex items-center justify-between'>
           <h3 className='text-neutral-200 text-[0.9rem] font-medium line-clamp-1'>{data.title}</h3>
           <Dropmenu active={actived} setactive={setactived} icon={"more_horiz"} >
+            <Menulink to={`/dashboard/blog/${data.$id}`}>view</Menulink>
             <Menulink to={`/dashboard/edit/${data.$id}`}>edit</Menulink>
-            <Menulink to={`/dashboard/blog/${data.$id}`}>edit</Menulink>
             <Menubutton onClick={() => setopen(pre => !pre)}> share</Menubutton>
             <Menubutton onClick={deleteblog}>delete</Menubutton>
           </Dropmenu>
