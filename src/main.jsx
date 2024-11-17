@@ -22,6 +22,7 @@ import Login from './compos/auth/Login.jsx'
 
 import { Analytics } from "@vercel/analytics/react"
 import Test from './pages/test.jsx'
+import Adminview from './compos/dashbord/Adminview.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -44,6 +45,7 @@ createRoot(document.getElementById('root')).render(
             <Route path='/dashboard' element={<Dashadmin />}>
               <Route path='/dashboard/overview' element={<Dashoverview />} />
               <Route path='/dashboard/create' element={<Addblog />} />
+              <Route path='/dashboard/blog/:blogid"' element={<Adminview />} />
               <Route path='/dashboard/edit/:blogid' element={<Editblog />} />
             </Route>
           </Route>

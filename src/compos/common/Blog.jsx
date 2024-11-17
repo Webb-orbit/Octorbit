@@ -128,4 +128,3 @@ export const Blog = ({ ani = true }) => {
         </>
     )
 }
-
