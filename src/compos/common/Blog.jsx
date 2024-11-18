@@ -54,6 +54,8 @@ export const Blog = ({ ani = true }) => {
         }
     }, [blogid])
 
+
+
     const copylink = () => {
         if (blogdata !== null) {
             navigator.clipboard.writeText(`${import.meta.env.VITE_ENDPOINT}/mkr/blog/${blogdata.$id}`)
@@ -96,7 +98,7 @@ export const Blog = ({ ani = true }) => {
             })
         }
     }, [blogid, blogdata])
-
+    
     if (privated) {
         return <Loadingpage imgsrc={"fingerprint"} mass={"Ehh, This page is privated now!"}/>
     }
