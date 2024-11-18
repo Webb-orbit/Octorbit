@@ -12,14 +12,16 @@ import {
     transformerNotationHighlight
   } from '@shikijs/transformers'
 import Loadingpage from '../utiles/Loadingpage'
+import { useSelector } from 'react-redux'
 
-export const Blog = ({ ani = true, restricted=true }) => {
+export const Blog = ({ ani = true }) => {
     const { blogid } = useParams()
     const [blogdata, setblogdata] = useState(null)
     const [copyopen, setcopyopen] = useState(false)
     const [privated, setprivated] = useState(false)
     const trackdiv = useRef(null)
     const withouttrackdiv = useRef(null)
+    const {isadmin} = useSelector(state=> state.admin)
 
 
     useEffect(() => {
@@ -32,7 +34,7 @@ export const Blog = ({ ani = true, restricted=true }) => {
                 if (blogid) {
                     const blog = await Blogbase.getoneblog(blogid)
                     if (blog) {
-                        if (!blog.active && restricted) setprivated(true)
+                        if (!blog.active && !isadmin) setprivated(true)
                         setblogdata(blog)
                     }
                 } else {
