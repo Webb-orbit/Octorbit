@@ -11,11 +11,13 @@ import {
     transformerNotationDiff,
     transformerNotationHighlight
   } from '@shikijs/transformers'
+import Loadingpage from '../utiles/Loadingpage'
 
-export const Blog = ({ ani = true }) => {
+export const Blog = ({ ani = true, restricted=true }) => {
     const { blogid } = useParams()
     const [blogdata, setblogdata] = useState(null)
     const [copyopen, setcopyopen] = useState(false)
+    const [privated, setprivated] = useState(false)
     const trackdiv = useRef(null)
     const withouttrackdiv = useRef(null)
 
@@ -30,6 +32,7 @@ export const Blog = ({ ani = true }) => {
                 if (blogid) {
                     const blog = await Blogbase.getoneblog(blogid)
                     if (blog) {
+                        if (!blog.active && restricted) setprivated(true)
                         setblogdata(blog)
                     }
                 } else {
@@ -45,6 +48,7 @@ export const Blog = ({ ani = true }) => {
          
         return()=>{
             setblogdata(null)
+            setprivated(false)
         }
     }, [blogid])
 
@@ -90,6 +94,10 @@ export const Blog = ({ ani = true }) => {
             })
         }
     }, [blogid, blogdata])
+
+    if (privated) {
+        return <Loadingpage imgsrc={"fingerprint"} mass={"Ehh, This page is privated now!"}/>
+    }
 
     return  (
         <>
