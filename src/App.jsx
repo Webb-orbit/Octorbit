@@ -33,7 +33,7 @@ const App = () => {
     recognition.interimResults = false;
     recognition.lang = "en-US";
 
-    if(isadmin){
+    if(isadmin !== false){
 
     recognition.onresult = (event) => {
       const command = event.results[event.results.length - 1][0].transcript.toLowerCase();
