@@ -33,8 +33,6 @@ const App = () => {
     recognition.interimResults = false;
     recognition.lang = "en-US";
 
-    if(isadmin !== false){
-
     recognition.onresult = (event) => {
       const command = event.results[event.results.length - 1][0].transcript.toLowerCase();
       console.log("Command received:", command);
@@ -52,7 +50,6 @@ const App = () => {
     };
 
     recognition.start();
-    }
 
     return () => recognition.stop();
   },[])
