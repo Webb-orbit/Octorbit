@@ -55,7 +55,7 @@ const App = () => {
     }
 
     return () => recognition.stop();
-  },[isadmin, disptch])
+  },[])
 
   return loading ? (<Loadingpage />) : (
     <>
