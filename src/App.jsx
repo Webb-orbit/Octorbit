@@ -4,14 +4,15 @@ import { useDispatch, useSelector} from "react-redux"
 import { storelogin } from "./store/adminslice"
 import Loadingpage from "./compos/utiles/Loadingpage"
 import { Outlet, useNavigate, useLocation } from "react-router-dom"
-let location = useLocation();
-let navigate = useNavigate();
+
 
 
 const App = () => {
   const disptch = useDispatch()
   const [loading, setloading] = useState(true)
   const {isadmin} = useSelector(state=> state.admin)
+  let location = useLocation();
+  let navigate = useNavigate();
   
   useEffect(() => {
     ; (async () => {
