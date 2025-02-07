@@ -43,9 +43,10 @@ const App = () => {
         window.open("https://www.youtube.com/");
       } else if (command === "open about") {
         window.open("https://www.github.com");
-      } else if (command === "makarov go out") {
+      } else if (command === "hey go out") {
         window.open("https://www.google.com/");
       }
+      
     };
 
     recognition.onend = () => {
