@@ -31,7 +31,7 @@ const App = () => {
   }, [])
 
   useEffect(() => {
-      if (isadmin || recognitionRef.current == null) return; // Do not start recognition if the user is not an admin
+      if (!isadmin || recognitionRef.current) return; // Do not start recognition if the user is not an admin
 
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
