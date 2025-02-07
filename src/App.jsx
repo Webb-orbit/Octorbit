@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState} from "react"
 import Admin from "./appwrite/auth"
 import { useDispatch, useSelector} from "react-redux"
 import { storelogin } from "./store/adminslice"
@@ -13,7 +13,7 @@ const App = () => {
   const {isadmin} = useSelector(state=> state.admin)
   let location = useLocation();
   let navigate = useNavigate();
-  const recognitionRef = useRef(null)
+  let recognitionRef = false;
   
   useEffect(() => {
     ; (async () => {
@@ -31,7 +31,7 @@ const App = () => {
   }, [])
 
   useEffect(() => {
-      if (!isadmin || !recognitionRef.current) return; // Do not start recognition if the user is not an admin
+      if (!isadmin || recognitionRef) return; // Do not start recognition if the user is not an admin
 
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -39,7 +39,7 @@ const App = () => {
     recognition.continuous = true;
     recognition.interimResults = false;
     recognition.lang = "en-US";
-recognitionRef.current = recognition
+    recognitionRef = true
 
 
 
@@ -65,7 +65,7 @@ recognitionRef.current = recognition
 
     return () => {
       recognition.abort();
-      recognitionRef.current = null
+      recognitionRef = false
     };
   }, [isadmin, location]); // Depend on `isadmin`
   
