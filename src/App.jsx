@@ -3,7 +3,9 @@ import Admin from "./appwrite/auth"
 import { useDispatch, useSelector} from "react-redux"
 import { storelogin } from "./store/adminslice"
 import Loadingpage from "./compos/utiles/Loadingpage"
-import { Outlet } from "react-router-dom"
+import { Outlet, useNavigate, useLocation } from "react-router-dom"
+let location = useLocation();
+let navigate = useNavigate();
 
 
 const App = () => {
@@ -42,7 +44,7 @@ const App = () => {
       if (command === "open") {
         window.open("https://www.youtube.com/");
       } else if (command === "open about") {
-        window.open("https://www.github.com");
+        navigate('/mkr/about')
       } else if (command === "hey go out") {
         window.open("https://www.google.com/");
       }
@@ -59,7 +61,7 @@ const App = () => {
     return () => {
       recognition.abort(); // Properly clean up recognition instance
     };
-  }, [isadmin]); // Depend on `isadmin`
+  }, [isadmin, location]); // Depend on `isadmin`
   
   return loading ? (<Loadingpage />) : (
     <>
