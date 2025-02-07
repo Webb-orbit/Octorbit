@@ -26,16 +26,18 @@ const App = () => {
     )()
   }, [])
 
-  useEffect(() =>{
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  useEffect(() => {
+    if (!isadmin) return; // Do not start recognition if the user is not an admin
+
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.continuous = true;
     recognition.interimResults = false;
     recognition.lang = "en-US";
-    if(isadmin){
+
     recognition.onresult = (event) => {
       const command = event.results[event.results.length - 1][0].transcript.toLowerCase();
-      console.log("Command received:", command);
 
       if (command === "open") {
         window.open("https://www.youtube.com/");
@@ -48,15 +50,16 @@ const App = () => {
 
     recognition.onend = () => {
       console.log("Recognition ended, restarting...");
-      recognition.start();
+      if (isadmin) recognition.start(); // Restart only if admin session is active
     };
 
     recognition.start();
-    }
 
-    return () => recognition.stop();
-  },[])
-
+    return () => {
+      recognition.abort(); // Properly clean up recognition instance
+    };
+  }, [isadmin]); // Depend on `isadmin`
+  
   return loading ? (<Loadingpage />) : (
     <>
         <Outlet />
