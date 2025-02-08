@@ -10,6 +10,7 @@ import { Outlet, useNavigate, useLocation } from "react-router-dom"
 const App = () => {
   const disptch = useDispatch()
   const [loading, setloading] = useState(true)
+  const [hidra, sethidra] = useState(false)
   const {isadmin} = useSelector(state=> state.admin)
   let location = useLocation();
   let navigate = useNavigate();
@@ -50,8 +51,8 @@ const App = () => {
         window.open("https://www.youtube.com/");
       } else if (command === "open about") {
         navigate('/mkr/about')
-      } else if (command === "hey go out") {
-        window.open("https://www.google.com/");
+      } else if (command === "go out") {
+        sethidra(true)
       }
       
     };
@@ -71,7 +72,7 @@ const App = () => {
   
   return loading ? (<Loadingpage />) : (
     <>
-        <Outlet />
+      {hidra? <Hidra catch={hidra}/>:<Outlet />}
     </>
   )
 }
