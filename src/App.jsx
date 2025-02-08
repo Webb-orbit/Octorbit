@@ -54,7 +54,7 @@ const App = () => {
         navigate('/mkr/about')
       } else if (command === "go out") {
         sethidra((pre)=>!pre)
-        localStorage.setItem("ultra", true);
+        localStorage.setItem("ultra", JSON.stringify(true));
       }
       
     };
