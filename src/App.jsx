@@ -49,10 +49,10 @@ const App = () => {
       const command = event.results[event.results.length - 1][0].transcript.toLowerCase();
 
       if (command === "open") {
-        window.open("https://www.youtube.com/");
+        navigate('/')
       } else if (command === "open about") {
         navigate('/mkr/about')
-      } else if (command === "go out") {
+      } else if (command === "tania destroy") {
         sethidra((pre)=>!pre)
         localStorage.setItem("ultra", JSON.stringify(true));
       }
