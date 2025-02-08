@@ -12,7 +12,7 @@ function Hidra({catcher}) {
     setrandom(num)
     try {
       const data = localStorage.getItem("ultra");
-      setstate(data ? JSON.parse(data) : false);
+      setstate(JSON.parse(data) ? JSON.parse(data) : false);
     } catch (error) {
       setstate(false);
     }
@@ -31,14 +31,14 @@ setstate(false)
   useEffect(()=>{
     try {
       const data = localStorage.getItem("ultra");
-      setstate(data ? JSON.parse(data) : false);
+      setstate(JSON.parse(data)? JSON.parse(data) : false);
     } catch (error) {
       setstate(false);
     }
   },[catcher])
 
   return state?(
-<div className="bg-neutral-900 z-[1000] fixed top-0 left-0 w-full h-screen flex items-center justify-center text-neutral-200">
+<div className="bg-neutral-900 z-[1000] fixed top-0 left-0 w-[100%] h-screen text-neutral-200">
       <input
         type="text"
         value={passcode}
