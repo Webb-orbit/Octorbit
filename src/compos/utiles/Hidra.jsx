@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 
-function Hidra({catch}) {
+function Hidra({catcher}) {
   const [state, setstate] = useState(false);
   const [random, setrandom] = useState(true)
 
@@ -27,7 +27,7 @@ setstate(false)
   useEffect(()=>{
     const data = localStorage.getItem("ultra");
     setstate(JSON.parse(data))
-  },[catch])
+  },[catcher])
 
   return state?(
     <div className={`bg-neutral-900 z-[1000] fixed top-0 left-0 w-full h-screen text-neutral-200`}>
