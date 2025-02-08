@@ -74,7 +74,7 @@ const App = () => {
   
   return loading ? (<Loadingpage />) : (
     <>
-      <Hidra catch={hidra}/>
+      <Hidra catcher={hidra}/>
       <Outlet />
     </>
   )
