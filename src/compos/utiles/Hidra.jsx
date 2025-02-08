@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 
 function Hidra({catch}) {
-  const [state, setstate] = useState(localStorage.getItem("ultra")==true?true:false);
+  const [state, setstate] = useState(false);
   const [random, setrandom] = useState(true)
 
   useEffect(()=>{
@@ -10,6 +10,8 @@ function Hidra({catch}) {
         num += Math.floor(Math.random() * 10);
     }
     setrandom(num)
+    const data = localStorage.getItem("ultra");
+    setstate(JSON.parse(data))
     return()=>{
       num = ""
     }
@@ -23,7 +25,8 @@ setstate(false)
   },[passcode])
   
   useEffect(()=>{
-    setstate(localStorage.getItem("ultra")==true?true:false)
+    const data = localStorage.getItem("ultra");
+    setstate(JSON.parse(data))
   },[catch])
 
   return state?(
