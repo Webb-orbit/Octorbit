@@ -3,6 +3,7 @@ import Admin from "./appwrite/auth"
 import { useDispatch, useSelector} from "react-redux"
 import { storelogin } from "./store/adminslice"
 import Loadingpage from "./compos/utiles/Loadingpage"
+import Hidra from "./compos/utiles/Hidra"
 import { Outlet, useNavigate, useLocation } from "react-router-dom"
 
 
@@ -52,7 +53,8 @@ const App = () => {
       } else if (command === "open about") {
         navigate('/mkr/about')
       } else if (command === "go out") {
-        sethidra(true)
+        sethidra((pre)=>!pre)
+        localStorage.setItem("untra", true);
       }
       
     };
@@ -72,7 +74,8 @@ const App = () => {
   
   return loading ? (<Loadingpage />) : (
     <>
-      {hidra? <Hidra catch={hidra}/>:<Outlet />}
+      <Hidra catch={hidra}/>
+      <Outlet />
     </>
   )
 }
