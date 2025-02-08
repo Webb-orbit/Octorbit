@@ -27,10 +27,10 @@ setstate(false)
   },[catch])
 
   return state?(
-    <div className={`bg-neutral-900 fixed top-0 left-0 w-full h-screen text-neutral-200`}>
-      <div class="flex items-center justify-center h-screen">
+    <div className={`bg-neutral-900 z-[1000] fixed top-0 left-0 w-full h-screen text-neutral-200`}>
+      <div class="flex items-center justify-center">
         <input type="text" value={passcode} onChange={(e)=> setpasscode(e.target.value)}
-          className="font-medium text-[0.9rem]"
+          className="font-medium w-[90%] bg-neutral-200 text-[0.9rem]"
           />
       </div>
     </div>
