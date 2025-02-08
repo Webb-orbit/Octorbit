@@ -11,7 +11,7 @@ function Hidra({catcher}) {
     }
     setrandom(num)
     const data = localStorage.getItem("ultra");
-    setstate(JSON.parse(data))
+    data?setstate(JSON.parse(data)):setstate(false)
     return()=>{
       num = ""
     }
@@ -26,7 +26,7 @@ setstate(false)
   
   useEffect(()=>{
     const data = localStorage.getItem("ultra");
-    setstate(JSON.parse(data))
+    data?setstate(JSON.parse(data)):setstate(false)
   },[catcher])
 
   return state?(
