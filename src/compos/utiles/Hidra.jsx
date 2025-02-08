@@ -2,7 +2,8 @@ import React, { useState, useEffect} from "react";
 
 function Hidra({catcher}) {
   const [state, setstate] = useState(false);
-  const [random, setrandom] = useState(true)
+  const [random, setrandom] = useState("")
+  const [passcode, setpasscode] = useState("")
 
   useEffect(()=>{
     let num = "";
