@@ -52,7 +52,7 @@ const App = () => {
         navigate('/')
       } else if (command === "open about") {
         navigate('/mkr/about')
-      } else if (command === "tania destroy") {
+      } else if (command === "go out") {
         sethidra((pre)=>!pre)
         localStorage.setItem("ultra", JSON.stringify(true));
       }
