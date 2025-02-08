@@ -5,9 +5,7 @@ function Hidra({catcher}) {
   const [random, setrandom] = useState("")
   const [passcode, setpasscode] = useState("")
   const sos = [
-  100, 100, 100, 
-  300, 100, 300, 100, 300, 
-  100, 100, 100  
+  900, 500, 900, 500, 900, 500, 900, 500, 900, 500, 900, 500, 900
 ];
 
   useEffect(()=>{
