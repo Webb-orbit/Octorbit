@@ -38,7 +38,7 @@ setstate(false)
   },[catcher])
 
   return state?(
-<div className="bg-neutral-900 z-[1000] fixed top-0 left-0 w-[100%] h-screen text-neutral-200">
+<div className="bg-neutral-500 fixed top-0 left-0 w-[100%] h-screen text-neutral-200">
       <input
         type="text"
         value={passcode}
