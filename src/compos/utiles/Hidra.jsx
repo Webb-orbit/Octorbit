@@ -4,6 +4,11 @@ function Hidra({catcher}) {
   const [state, setstate] = useState(false);
   const [random, setrandom] = useState("")
   const [passcode, setpasscode] = useState("")
+  const sos = [
+  100, 100, 100, 
+  300, 100, 300, 100, 300, 
+  100, 100, 100  
+];
 
   useEffect(()=>{
     let num = "";
@@ -14,29 +19,23 @@ function Hidra({catcher}) {
     try {
       const data = localStorage.getItem("ultra");
       setstate(JSON.parse(data) ? JSON.parse(data) : false);
+      JSON.parse(data) && navigator.vibrate(sos);
     } catch (error) {
       setstate(false);
     }
     return()=>{
       num = ""
     }
-  },[])
+  },[catcher])
 
   useEffect(()=>{
 if(passcode == `TN${random * 2}`){
- localStorage.removeItem("ultra");
-setstate(false)
+  localStorage.removeItem("ultra");
+  setstate(false)
+  setpasscode("")
 }
   },[passcode])
   
-  useEffect(()=>{
-    try {
-      const data = localStorage.getItem("ultra");
-      setstate(JSON.parse(data)? JSON.parse(data) : false);
-    } catch (error) {
-      setstate(false);
-    }
-  },[catcher])
 
   return state?(
 <div className="bg-neutral-900 z-[1000] fixed top-0 left-0 w-[100%] h-screen text-neutral-200">
