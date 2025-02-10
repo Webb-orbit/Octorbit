@@ -1,6 +1,6 @@
 import { Blog } from '../common/Blog'
 import Blogslist from '../common/Blogslist'
-import { Width } from '../compos/utiles/Width'
+import { Width } from '../utiles/Width'
 
 
 const Adminview = () => {
