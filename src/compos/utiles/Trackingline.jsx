@@ -34,7 +34,7 @@ export const TracingBeam = ({ children, className }) => {
     }
   )
 
-  return (
+  return false?(
     <motion.div
       ref={ref}
       className={cn("relative w-full max-w-4xl mx-auto h-full", className)}
@@ -113,5 +113,5 @@ export const TracingBeam = ({ children, className }) => {
       </div>
       <div ref={contentRef}>{children}</div>
     </motion.div>
-  )
+  ):null
 }
