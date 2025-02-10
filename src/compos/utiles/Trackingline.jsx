@@ -113,5 +113,5 @@ export const TracingBeam = ({ children, className }) => {
       </div>
       <div ref={contentRef}>{children}</div>
     </motion.div>
-  ):null
+  ):<div>{children}</div>
 }
