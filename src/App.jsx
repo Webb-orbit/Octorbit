@@ -44,6 +44,7 @@ const App = () => {
     if(JSON.parse(localStorage.getItem("ultra"))){
       recognition.abort();
       recognitionRef = false
+      return 
     }
 
 
