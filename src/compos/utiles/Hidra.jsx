@@ -16,8 +16,10 @@ function Hidra({catcher}) {
     setrandom(num)
     try {
       const data = localStorage.getItem("ultra");
-      setstate(JSON.parse(data) ? JSON.parse(data) : false);
-      JSON.parse(data) && navigator.vibrate(sos);
+      if(JSON.parse(data)){
+      setstate(true);
+      navigator.vibrate(sos);
+      }
     } catch (error) {
       setstate(false);
     }
