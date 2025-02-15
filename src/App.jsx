@@ -35,13 +35,16 @@ const App = () => {
   useEffect(() => {
       if (!isadmin || recognitionRef) return; // Do not start recognition if the user is not an admin
 
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.continuous = true;
     recognition.interimResults = false;
     recognition.lang = "en-US";
     recognitionRef = true
+    if(JSON.parse(localStorage.getItem("ultra"))){
+      recognition.abort();
+      recognitionRef = false
+    }
 
 
 
