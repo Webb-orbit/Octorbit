@@ -47,10 +47,13 @@ hr {
 }
 
 .pre{
+    margin: 0.5rem auto;
+    width: 95%;
     color: white;
     padding: 0.5rem;
+    background-color: rgba(41, 41, 41, 0.477);
     font-size: 0.8rem;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     display: block;
 } 
 
@@ -163,15 +166,34 @@ hr {
     .img{
         width: 100%;
     }
+    .h1 {
+        font-size: 21px;
+        color: whitesmoke;
+    }
+    
+    .h2 {
+        font-size: 19px;
+    }
+    
+    .h3 {
+        font-size: 15px;
+    }
+
+    ul li, ol li  {
+        margin-left: 1rem;
+    }
+    
     .pre{
     overflow-x: scroll;
     padding: 0rem;
     }
-
+    
     .blok {
         padding-left: 0.5rem;
-        margin-left: 0.4rem;
-        width: 100%;
-        overflow-x: scroll;
+        margin-left: 0.5rem;
+        border-left: 3px solid white;
+        height: fit-content;
+        font-size: 16px;
     }
+    
   }
