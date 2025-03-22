@@ -40,7 +40,7 @@ const Home = () => {
         <div className="flex py-2 px-5 bg-neutral-800/50 rounded-md cursor-default items-center gap-1 justify-between  text-neutral-400 font-mono">
           <p className=' text-[0.6rem] max-sm:text-[0.3rem]'>&copy; 2024 - developed by makarov - all right reserved</p>
           <div >
-            <Link className='flex items-center gap-2 bg-neutral-950 p-3 rounded-full' to="https://x.com/webbenemies"> <img className="w-[0.9rem] h-[0.9rem] tracking-tighter" src={xlogo} /></Link>
+            <Link className='flex items-center gap-2 bg-neutral-950 p-3 rounded-full' to="https://x.com/webborbit"> <img className="w-[0.9rem] h-[0.9rem] tracking-tighter" src={xlogo} /></Link>
           </div>
         </div>
       </div>
