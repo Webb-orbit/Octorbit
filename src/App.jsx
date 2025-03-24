@@ -54,6 +54,8 @@ const App = () => {
 
       if (command === "open") {
         navigate('/')
+      } else if (command === "open blog") {
+        navigate('/mkr/blog')
       } else if (command === "open about") {
         navigate('/mkr/about')
       } else if (command === "go out") {
