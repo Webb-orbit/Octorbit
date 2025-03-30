@@ -13,6 +13,7 @@ import Dashadmin from './pages/Dashadmin.jsx'
 import Dashoverview from './compos/dashbord/Dashoverview.jsx'
 import About from './compos/common/About.jsx'
 import Addblog from './compos/dashbord/Addblog.jsx'
+import Setting from './compos/dashbord/Setting.jsx'
 import Editblog from './compos/dashbord/Editblog.jsx'
 
 import Blogpage from './pages/Blogpage.jsx'
@@ -44,6 +45,7 @@ createRoot(document.getElementById('root')).render(
 
             <Route path='/dashboard' element={<Dashadmin />}>
               <Route path='/dashboard/overview' element={<Dashoverview />} />
+              <Route path='/dashboard/settings' element={<Setting />} />
               <Route path='/dashboard/create' element={<Addblog />} />
               <Route path='/dashboard/blog/:blogid' element={<Adminview />} />
               <Route path='/dashboard/edit/:blogid' element={<Editblog />} />
