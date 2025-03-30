@@ -13,6 +13,13 @@ class adminsett {
 
         this.sett = new Databases(this.client)
   }
+
+  async createadmin(headername, subheader,aboutcontent,aboutheader,aboutsubheader,thoughtheader,subthought){
+        return await this.sett.createDocument(Appwriteconf.appwritebase, Appwriteconf.admincollid, ID.unique(), {
+            headername, subheader,aboutcontent,aboutheader,aboutsubheader,thoughtheader,subthought
+        })
+  }
+  
 }
 const Settbase = new adminsett()
 export default Settbase
