@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Inputcompo, Textareacompo } from "../utiles/Inputcompo"
 
 const Setting = () => { 
   const [count, setCount] = useState(0);
