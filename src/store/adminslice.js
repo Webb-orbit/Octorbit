@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const init = {
     isadmin: false,
-    userid: null
+    userid: null,
+    admindocid: null 
 }
 
 const Adminslice = createSlice({
@@ -11,11 +12,13 @@ const Adminslice = createSlice({
     reducers:{
         storelogin(state, action){
             state.isadmin = true,
-            state.userid = action.payload
+            state.userid = action.payload,
+            state.admindocid = action.payload?.admindocid
         },
         storelogout(state){
             state.isadmin = false,
-            state.userid = null
+            state.userid = null,
+            state.admindocid = null
         },
     }
 })
