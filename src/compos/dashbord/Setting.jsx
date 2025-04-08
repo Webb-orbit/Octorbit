@@ -16,11 +16,13 @@ return (
       <div className='mb-4 p-4 bg-neutral-950'>
         <h3 className='capitalize text-[1.1rem] text-neutral-400 select-none font-bold'>home</h3>
         <p className='text-[0.7rem] text-neutral-400 font-semibold '>customize your space</p>
+        <div className={`flex items-center justify-between`}>
         <Inputcompo {...register("header")}
                         lmax={100}
                         classes="h-[3rem]"
                         plain={"hello your header"} />
         <button className={` ml-4 text-[0.8rem] rounded font-semibold capitalize mt-4 px-2 py-1 bg-green-600 text-neutral-100 `}>update</button>
+          </div>
       </div>
 
       <div>
