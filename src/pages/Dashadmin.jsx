@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import Admin from '../appwrite/auth'
 import { Outlet, useNavigate } from 'react-router-dom'
 import Loadingpage from '../compos/utiles/Loadingpage'
 import Navber from '../compos/common/Navber'
