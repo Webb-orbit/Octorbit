@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form"
 import { Inputcompo, Textareacompo } from "../utiles/Inputcompo"
 
 const Setting = () => { 
   const [count, setCount] = useState(0);
+  const { register, watch, handleSubmit, setError, formState: { errors, isSubmitting } } = useForm()
 
 return (
   <div className='poppins-regular w-[90%] mx-auto p-7 rounded-md h-[100%] bg-black  mb-4 max-[800px]:flex-col max-[800px]:w-[95%] max-[800px]:px-1 max-[800px]:py-7'>
