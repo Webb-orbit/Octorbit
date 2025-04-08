@@ -1,10 +1,26 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form"
 import { Inputcompo, Textareacompo } from "../utiles/Inputcompo"
+import Admin from "../../appwrite/auth"
+import Settbase from "../../appwrite/Settingapi"
 
 const Setting = () => { 
   const [count, setCount] = useState(0);
-  const { register, watch, handleSubmit, setError, formState: { errors, isSubmitting } } = useForm()
+  const [headername, setheadername] = useState("");
+
+  const updatefields = async (fieldname, value) => {
+        try {
+            const admin = await Admin.getcurrentaccount()
+            if (admin) {
+                    const update = await Settbase.updatadmin(prevals.$id, {fieldname: value})
+                    if (update) {
+                        //naviget("/dashboard/overview")
+                    }
+            }
+        } catch (error) {
+            //setError("root", { message: error.response?.message || "something went wronge" })
+          console.error(error)
+        }
+  }
 
 return (
   <div className='poppins-regular w-[90%] mx-auto p-7 rounded-md h-[100%] bg-black  mb-4 max-[800px]:flex-col max-[800px]:w-[95%] max-[800px]:px-1 max-[800px]:py-7'>
@@ -17,10 +33,12 @@ return (
         <h3 className='capitalize text-[1.1rem] text-neutral-400 select-none font-bold'>home</h3>
         <p className='text-[0.7rem] text-neutral-400 font-semibold '>customize your space</p>
         <div className={`flex items-center justify-between`}>
-        <Inputcompo {...register("header")}
-                        lmax={100}
-                        classes="h-[3rem]"
-                        plain={"hello your header"} />
+        <Inputcompo
+            value={headername}
+            onChange={(e)=> setheadername(e.target.value)}
+            lmax={100}
+            classes="h-[3rem]"
+            plain={"hello your header"} />
         <button className={` ml-4 text-[0.8rem] rounded font-semibold capitalize mt-4 px-2 py-1 bg-green-600 text-neutral-100 `}>update</button>
           </div>
       </div>
