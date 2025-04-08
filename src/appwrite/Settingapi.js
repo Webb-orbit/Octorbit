@@ -7,7 +7,6 @@ class adminsett {
 
   constructor(){
         this.client = new Client()
-        this.client
         .setEndpoint(Appwriteconf.appwriteendpoint)
         .setProject(Appwriteconf.projectid);
 
