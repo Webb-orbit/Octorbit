@@ -50,7 +50,7 @@ return (
             <li>darkpassword delete your all target, shares and files</li>
             <li>Logging out for all devices</li>
         </ul> 
-        <p>{JSON.stringify(stateval)}</p>
+        <p>{stateval.toString()}</p>
         <button className={` ml-4 text-[0.8rem] rounded font-semibold capitalize mt-4 px-2 py-1 bg-green-600 text-neutral-100 `}>keep account</button>
       </div>
 
