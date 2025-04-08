@@ -19,6 +19,27 @@ class adminsett {
             headername
         })
   }
+
+  async getoneadmin(docid){
+        return await this.blogs.getDocument(Appwriteconf.appwritebase, Appwriteconf.admincollid, docid)
+    }
+
+    async deleteadmin(docid){
+        return await this.blogs.deleteDocument(Appwriteconf.appwritebase, Appwriteconf.admincollid, docid)
+    }
+
+    async updatadmin(docid, {headername,subheader,aboutcontent,aboutheader,aboutsubheader,thoughtheader,subthought}){
+        return await this.blogs.updateDocument(Appwriteconf.appwritebase, Appwriteconf.admincollid, docid, {headername,subheader,aboutcontent,aboutheader,aboutsubheader,thoughtheader,subthought})
+    }
+
+    async getadmin(){
+        return await this.blogs.listDocuments(Appwriteconf.appwritebase, Appwriteconf.admincollid, [
+            Query.limit(1),
+            Query.orderDesc("$createdAt"),
+            Query.equal("active", true)
+        ])
+    }
+  
   
 }
 const Settbase = new adminsett()
