@@ -4,8 +4,8 @@ import Loadingpage from '../compos/utiles/Loadingpage'
 import Navber from '../compos/common/Navber'
 import Dashnav from '../compos/dashbord/Dashnav'
 import { useDispatch} from "react-redux"
-import Admin from "../../appwrite/auth"
-import Settbase from "../../appwrite/Settingapi"
+import Admin from "../appwrite/auth"
+import Settbase from "../appwrite/Settingapi"
 
 const Dashadmin = () => {
     const [loading, setloading] = useState(true)
