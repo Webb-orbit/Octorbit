@@ -5,6 +5,7 @@ import { storelogin } from "./store/adminslice"
 import Loadingpage from "./compos/utiles/Loadingpage"
 import Hidra from "./compos/utiles/Hidra"
 import { Outlet, useNavigate, useLocation } from "react-router-dom"
+import Settbase from "../appwrite/Settingapi"
 
 
 
@@ -20,9 +21,10 @@ const App = () => {
   useEffect(() => {
     ; (async () => {
       try {
+        const adminblog = await Settbase.getadmin()
         const isadmin = await Admin.getcurrentaccount()
         if (isadmin && isadmin.labels.includes("admin")) {
-          disptch(storelogin({userid:isadmin.$id}))
+          disptch(storelogin({userid:isadmin.$id, admindocid:adminblog?.documents[0]?.$id}))
           setloading(false)
         }
       } catch (error) {
