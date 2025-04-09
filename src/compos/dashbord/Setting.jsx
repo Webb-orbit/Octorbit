@@ -13,7 +13,7 @@ const Setting = () => {
         try {
             const admin = await Admin.getcurrentaccount()
             if (admin) {
-                    const update = await Settbase.updatadmin(prevals.$id, {fieldname: value})
+                    const update = await Settbase.updatadmin("preval", {fieldname: value})
                     if (update) {
                         //naviget("/dashboard/overview")
                     }
