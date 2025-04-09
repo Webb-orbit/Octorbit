@@ -5,7 +5,7 @@ import { storelogin } from "./store/adminslice"
 import Loadingpage from "./compos/utiles/Loadingpage"
 import Hidra from "./compos/utiles/Hidra"
 import { Outlet, useNavigate, useLocation } from "react-router-dom"
-import Settbase from "../appwrite/Settingapi"
+import Settbase from "./appwrite/Settingapi"
 
 
 
