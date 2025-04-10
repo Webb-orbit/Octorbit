@@ -19,7 +19,7 @@ const Dashadmin = () => {
                 const adminblog = await Settbase.getadmin()
                 if (admin && admin.labels.includes("admin")) {
                     setloading(false)
-                    disptch(storelogin({admindocid: adminblog?.documents[0]?.$id}))
+                    disptch(storelogin({userid:admin.$id,admindocid: adminblog?.documents[0]?.$id}))
                 } else {
                     naviget("/")
                 }
