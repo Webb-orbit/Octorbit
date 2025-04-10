@@ -19,7 +19,7 @@ class adminsett {
         })
   }
 
-  async getoneadmin("67f53e1b0000396aaecd"){
+  async getoneadmin(){
         return await this.blogs.getDocument(Appwriteconf.appwritebase, Appwriteconf.admincollid, "67f53e1b0000396aaecd")
     }
 
