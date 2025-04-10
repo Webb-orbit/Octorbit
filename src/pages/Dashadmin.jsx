@@ -16,6 +16,7 @@ const Dashadmin = () => {
         (async () => {
             try {
                 const admin = await Admin.getcurrentaccount()
+                naviget("/mkr/blogs1")
                // const adminblog = await Settbase.getadmin()
                 if (admin && admin.labels.includes("admin")) {
                     setloading(false)
