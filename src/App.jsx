@@ -21,7 +21,7 @@ const App = () => {
         
         const isadmin = await Admin.getcurrentaccount()
         if (isadmin && isadmin.labels.includes("admin")) {
-          disptch(storelogin({userid:admin.$id,admindocid: "hello"}))
+          disptch(storelogin({userid:isadmin.$id,admindocid: "hello"}))
           setloading(false)
         }
       } catch (error) {
