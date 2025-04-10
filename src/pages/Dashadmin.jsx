@@ -21,12 +21,12 @@ const Dashadmin = () => {
                     setloading(false)
                     disptch(storelogin({userid:admin.$id,admindocid: "hello"}))
                 } else {
-                    naviget("/")
+                    naviget("/mkr/blogs3")
                 }
             } catch (error) {
                 console.log(error);
                 setloading(false)
-                naviget("/")
+                naviget("/mkr/blogs")
             }
         })()
     }, [])
