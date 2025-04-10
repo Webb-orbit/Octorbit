@@ -19,8 +19,8 @@ class adminsett {
         })
   }
 
-  async getoneadmin(docid){
-        return await this.blogs.getDocument(Appwriteconf.appwritebase, Appwriteconf.admincollid, docid)
+  async getoneadmin("67f53e1b0000396aaecd"){
+        return await this.blogs.getDocument(Appwriteconf.appwritebase, Appwriteconf.admincollid, "67f53e1b0000396aaecd")
     }
 
     async deleteadmin(docid){
