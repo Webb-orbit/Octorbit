@@ -12,7 +12,7 @@ const Adminslice = createSlice({
     reducers:{
         storelogin(state, action){
             state.isadmin = true,
-            state.userid = action.payload,
+            state.userid = action.payload?.userid,
             state.admindocid = action.payload?.admindocid
         },
         storelogout(state){
